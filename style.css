@@ -1,41 +1,30 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lega degli Eroi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="#rose">Rose</a></li>
+      <li><a href="#classifica">Classifica</a></li>
+      <li><a href="#draft">Draft</a></li>
+      <li><a href="#svincolati">Svincolati</a></li>
+      <li><a href="#chiamate">Chiamate</a></li>
+      <li><a href="#albo">Albo d'Oro</a></li>
+    </ul>
+  </nav>
 
-nav {
-    background-color: #003366;
-    color: white;
-    padding: 1em 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-section {
-    margin-bottom: 40px;
-}
+  <main>
+    <section id="rose"><h2>Rose</h2><p>Contenuto delle rose con FP/U21...</p></section>
+    <section id="classifica"><h2>Classifica</h2><p>Classifica Conference e Round Robin...</p></section>
+    <section id="draft"><h2>Draft 2025</h2><p>Ordine e scambi visivi...</p></section>
+    <section id="svincolati"><h2>Svincolati</h2><p>Lista filtrabile degli svincolati...</p></section>
+    <section id="chiamate"><h2>Chiamate Segrete</h2><p>Modulo simulato...</p></section>
+    <section id="albo"><h2>Albo d'Oro</h2><p>Vincitori precedenti...</p></section>
+  </main>
+</body>
+</html>
