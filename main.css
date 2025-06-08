@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -12,7 +13,7 @@ nav {
     padding: 1em 0;
 }
 
-nav ul {
+nav ul.navbar {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -20,11 +21,11 @@ nav ul {
     margin: 0;
 }
 
-nav ul li {
+nav ul.navbar li {
     margin: 0 15px;
 }
 
-nav ul li a {
+nav ul.navbar li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
