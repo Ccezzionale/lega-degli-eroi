@@ -1,0 +1,77 @@
+/* ✅ Contenitore flessibile: 4 sopra, 4 sotto su desktop */
+#riepilogo-squadre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ✅ Singolo box squadra */
+.riepilogo-team {
+  background-color: #002b5c;
+  border-radius: 12px;
+  padding: 16px;
+  width: 22%;
+  min-width: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+.riepilogo-team:hover {
+  transform: translateY(-4px);
+}
+
+/* ✅ Logo */
+.riepilogo-team img {
+  max-width: 70px;
+  margin-bottom: 8px;
+  display: block;
+  margin: 0 auto 8px;
+  border-radius: 8px;
+}
+
+/* ✅ Nome squadra */
+.riepilogo-team h4 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+/* ✅ Lista pick */
+.riepilogo-team div {
+  margin: 3px 0;
+  font-size: 0.9em;
+}
+
+/* ✅ Bottone refresh */
+#btn-riepilogo-refresh {
+  background-color: #0074D9;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1em;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+#btn-riepilogo-refresh:hover {
+  background-color: #005ea2;
+}
+
+/* ✅ Responsive per tablet: 2 per riga */
+@media (max-width: 768px) {
+  .riepilogo-team {
+    width: 45%;
+  }
+}
+
+/* ✅ Responsive per mobile: 1 per riga */
+@media (max-width: 480px) {
+  .riepilogo-team {
+    width: 90%;
+  }
+}
