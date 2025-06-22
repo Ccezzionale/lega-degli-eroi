@@ -1,0 +1,60 @@
+body {
+  background: #0b0c10;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #ffcc00;
+  margin-bottom: 40px;
+}
+
+.bracket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 40px;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.match {
+  background: #1f2833;
+  border: 2px solid #45a29e;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 140px;
+  position: relative;
+}
+
+.team {
+  padding: 5px 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #66fcf1;
+}
+
+.team:last-child {
+  border-bottom: none;
+}
+
+/* Connettori */
+.round:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 40px;
+  height: 2px;
+  background: #66fcf1;
+}
