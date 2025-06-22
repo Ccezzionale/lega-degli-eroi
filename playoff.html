@@ -3,30 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playoff NBA Style</title>
-  <link rel="stylesheet" href="playoff_nba.css" />
+  <title>Playoff Card NBA</title>
+  <link rel="stylesheet" href="playoff_card.css" />
 </head>
 <body>
   <h1>PLAYOFF 2025</h1>
-  <div class="nba-bracket">
-    <!-- Wildcard -->
-    <div class="match" id="WC1" style="grid-column: 1; grid-row: 1;"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="WC2" style="grid-column: 1; grid-row: 2;"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="WC3" style="grid-column: 1; grid-row: 3;"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="WC4" style="grid-column: 1; grid-row: 4;"><span></span><span class="vs">vs</span><span></span></div>
+  <div class="nba-grid">
+    <!-- I match verranno riempiti da playoff.js -->
+    <div class="match" id="WC1"></div>
+    <div class="match" id="WC2"></div>
+    <div class="match" id="WC3"></div>
+    <div class="match" id="WC4"></div>
 
-    <!-- Quarti -->
-    <div class="match" id="Q1" style="grid-column: 2; grid-row: 1;"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="Q2" style="grid-column: 2; grid-row: 2;"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="Q3" style="grid-column: 2; grid-row: 3;"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="Q4" style="grid-column: 2; grid-row: 4;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="Q1"></div>
+    <div class="match" id="Q2"></div>
+    <div class="match" id="Q3"></div>
+    <div class="match" id="Q4"></div>
 
-    <!-- Semifinali -->
-    <div class="match" id="S1" style="grid-column: 3; grid-row: 1 / span 2;"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="S2" style="grid-column: 3; grid-row: 3 / span 2;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="S1"></div>
+    <div class="match" id="S2"></div>
 
-    <!-- Finale -->
-    <div class="match" id="F" style="grid-column: 4; grid-row: 2 / span 2;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="F"></div>
   </div>
 
   <script defer src="risultati_playoff.js"></script>
