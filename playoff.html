@@ -2,32 +2,102 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Playoff NBA Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playoff 2025</title>
   <link rel="stylesheet" href="playoff.css" />
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #33faff;
+      font-size: 2.4em;
+      margin-bottom: 40px;
+    }
+    .bracket {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      justify-items: center;
+      align-items: center;
+      position: relative;
+    }
+    .round {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .match {
+      background-color: #1f2a38;
+      border: 2px solid #33faff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 0 10px #33faff33;
+    }
+    .team {
+      font-size: 1rem;
+      color: #ffffff;
+    }
+    .vs {
+      font-weight: bold;
+      color: #ffc107;
+    }
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
   <h1>PLAYOFF 2025</h1>
-  <div class="bracket-wrapper">
-    <div class="match" id="WC1"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="WC2"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="WC3"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="WC4"><span></span><span class="vs">vs</span><span></span></div>
+  <div class="bracket">
+    <div class="round">
+      <div class="match"><div class="team">VS</div></div>
+      <div class="match"><div class="team">VS</div></div>
+      <div class="match"><div class="team">VS</div></div>
+      <div class="match"><div class="team">VS</div></div>
+    </div>
+    <div class="round">
+      <div class="match"><div class="team">VS</div></div>
+      <div class="match"><div class="team">VS</div></div>
+      <div class="match"><div class="team">VS</div></div>
+      <div class="match"><div class="team">VS</div></div>
+    </div>
+    <div class="round">
+      <div class="match"><div class="team">VS</div></div>
+      <div class="match"><div class="team">VS</div></div>
+    </div>
+    <div class="round">
+      <div class="match"><div class="team">VS</div></div>
+    </div>
+    <svg>
+      <!-- Wildcard -> Quarti -->
+      <line x1="220" y1="50" x2="310" y2="50" stroke="#33faff" stroke-width="2" />
+      <line x1="220" y1="180" x2="310" y2="180" stroke="#33faff" stroke-width="2" />
+      <line x1="220" y1="310" x2="310" y2="310" stroke="#33faff" stroke-width="2" />
+      <line x1="220" y1="440" x2="310" y2="440" stroke="#33faff" stroke-width="2" />
 
-    <div class="match" id="Q1"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="Q2"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="Q3"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="Q4"><span></span><span class="vs">vs</span><span></span></div>
+      <!-- Quarti -> Semi -->
+      <line x1="530" y1="115" x2="620" y2="115" stroke="#33faff" stroke-width="2" />
+      <line x1="530" y1="370" x2="620" y2="370" stroke="#33faff" stroke-width="2" />
 
-    <div class="match" id="S1"><span></span><span class="vs">vs</span><span></span></div>
-    <div class="match" id="S2"><span></span><span class="vs">vs</span><span></span></div>
-
-    <div class="match" id="F"><span></span><span class="vs">vs</span><span></span></div>
-
-    <svg class="lines" viewBox="0 0 1600 1000" preserveAspectRatio="none">
-      <!-- future SVG lines -->
+      <!-- Semi -> Finale -->
+      <line x1="840" y1="240" x2="930" y2="240" stroke="#33faff" stroke-width="2" />
     </svg>
   </div>
-  <script defer src="playoff.js"></script>
 </body>
 </html>
+
