@@ -1,9 +1,23 @@
+body {
+  background-color: #001f3f;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.titolo-playoff {
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
 .bracket {
   display: flex;
   gap: 40px;
   justify-content: center;
   padding: 40px 20px;
-  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .round {
@@ -23,12 +37,21 @@
   display: block;
 }
 
+/* Posizionamento personalizzato */
+[data-round="Semifinali"] {
+  margin-top: 90px;
+}
+
+[data-round="Finale"] {
+  margin-top: 180px;
+}
+
 .match {
-  background: linear-gradient(135deg, #0b0e3c, #1a1f71);
+  background: linear-gradient(135deg, #001f3f, #0a154f);
   border: 2px solid gold;
   border-radius: 12px;
   padding: 10px 16px;
-  width: 220px;
+  width: 240px;
   box-shadow: 0 0 10px gold;
 }
 
