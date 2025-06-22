@@ -1,52 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Playoff Lega degli Eroi</title>
-  <link rel="stylesheet" href="./playoff.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playoff 2025</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+  <style>
+    body {
+      background-color: #001f3f;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px 10px;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffcc00;
+      font-size: 2.8em;
+    }
+
+    .bracket-container {
+      overflow-x: auto;
+      padding: 40px;
+    }
+
+    .bracket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+    .round-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 10px;
+    }
+
+    .match {
+      background: linear-gradient(135deg, #021d3d, #191970);
+      padding: 16px;
+      border-radius: 12px;
+      border: 2px solid #ffcc00;
+      color: white;
+      text-align: center;
+      min-width: 240px;
+      box-shadow: 0 0 12px #ffcc00;
+    }
+
+    .match span {
+      display: block;
+      margin: 6px 0;
+      font-size: 1.05em;
+    }
+
+.match span.vs {
+  color: #ffcc00 !important;
+  font-weight: bold;
+}
+    svg.connector {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: visible;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+.squadra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  font-family: 'Baloo 2', cursive;
+  color: #ffcc00;
+  text-align: center;
+  text-shadow: 1px 1px 3px #00000088;
+}
+
+.squadra img {
+  width: 50px;
+  height: auto;
+}
+
+.squadra .punteggio {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-top: 4px;
+  font-weight: bold;
+}   
+
+</style>
+
+  </style>
 </head>
 <body>
-  <h1>Playoff 2025</h1>
-  <div class="bracket">
-    <!-- Wildcard -->
-    <div class="round round-wildcard">
-      <div class="match">
-        <div class="team">Rubinkebab</div>
-        <div class="team">Team Bartowski</div>
+  <h1>PLAYOFF 2025</h1>
+  <div class="bracket-wrapper">
+    <div class="bracket">
+      <!-- Wild Card -->
+      <div class="round">
+        <div class="round-title">Wild Card</div>
+        <div class="match" id="WC1"><span></span><span class="vs">vs</span><span></span></div>
+        <div class="match" id="WC2"><span></span><span class="vs">vs</span><span></span></div>
+        <div class="match" id="WC3"><span></span><span class="vs">vs</span><span></span></div>
+        <div class="match" id="WC4"><span></span><span class="vs">vs</span><span></span></div>
       </div>
-      <div class="match">
-        <div class="team">Wildboys78</div>
-        <div class="team">Devastators</div>
-      </div>
-    </div>
 
-    <!-- Quarti -->
-    <div class="round round-quarter">
-      <div class="match">
-        <div class="team">Team Sgrilli</div>
-        <div class="team">Vincente WC1</div>
+      <!-- Quarti -->
+      <div class="round">
+        <div class="round-title">Quarti</div>
+        <div class="match" id="Q1"><span></span><span class="vs">vs</span><span></span></div>
+        <div class="match" id="Q2"><span></span><span class="vs">vs</span><span></span></div>
+        <div class="match" id="Q3"><span></span><span class="vs">vs</span><span></span></div>
+        <div class="match" id="Q4"><span></span><span class="vs">vs</span><span></span></div>
       </div>
-      <div class="match">
-        <div class="team">FC Pinuccio</div>
-        <div class="team">Vincente WC2</div>
-      </div>
-    </div>
 
-    <!-- Semifinali -->
-    <div class="round round-semi">
-      <div class="match">
-        <div class="team">Semifinalista A</div>
-        <div class="team">Semifinalista B</div>
+      <!-- Semifinali -->
+      <div class="round">
+        <div class="round-title">Semifinali</div>
+        <div class="match" id="S1"><span></span><span class="vs">vs</span><span></span></div>
+        <div class="match" id="S2"><span></span><span class="vs">vs</span><span></span></div>
       </div>
-    </div>
 
-    <!-- Finale -->
-    <div class="round round-final">
-      <div class="match">
-        <div class="team">Finalista 1</div>
-        <div class="team">Finalista 2</div>
+      <!-- Finale -->
+      <div class="round">
+        <div class="round-title">Finale</div>
+        <div class="match" id="F"><span></span><span class="vs">vs</span><span></span></div>
       </div>
     </div>
   </div>
 
-  <script src="playoff.js"></script>
+<script defer src="risultati_playoff.js"></script>
+<script defer src="playoff.js?v=20250643"></script>
+  
 </body>
+</html>
