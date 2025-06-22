@@ -1,89 +1,68 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #001f3f;
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-h1 {
-  text-align: center;
-  margin: 30px 0;
-  font-size: 2.5em;
-  color: #ffcc00;
-  text-shadow: 0 0 8px #ffcc00;
-}
-
-.nba-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 120px);
+.bracket {
+  display: flex;
   gap: 40px;
-  padding: 40px;
-  justify-items: center;
-  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  flex-wrap: wrap;
 }
 
-/* Match */
-.match {
-  background: #002a4f;
-  border: 2px solid #ffcc00;
-  border-radius: 12px;
-  width: 240px;
-  height: 100px;
+.round {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 25px;
   position: relative;
-  box-shadow: 0 0 10px #ffcc00;
-  padding: 10px;
+}
+
+.round::before {
+  content: attr(data-round);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00ffff;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.match {
+  background: linear-gradient(135deg, #0b0e3c, #1a1f71);
+  border: 2px solid gold;
+  border-radius: 12px;
+  padding: 10px 16px;
+  width: 220px;
+  box-shadow: 0 0 10px gold;
 }
 
 .team {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.9em;
-  gap: 8px;
-}
-
-.team img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  border-radius: 4px;
-}
-
-.team-name {
-  flex-grow: 1;
-  text-align: left;
   font-weight: bold;
-  color: white;
-}
-
-.score {
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #ffcc00;
-}
-
-.separator {
-  height: 2px;
-  width: 100%;
-  background: #00ffff;
+  font-size: 14px;
+  color: #ffffff;
   margin: 6px 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nba-grid {
-    grid-template-columns: repeat(4, 240px);
-    overflow-x: scroll;
-  }
-
-  .match {
-    width: 200px;
-    height: auto;
-  }
+.team img {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
 }
 
+.team-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.score {
+  color: gold;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.separator {
+  height: 1px;
+  background-color: #00ffff;
+  margin: 6px 0;
+}
