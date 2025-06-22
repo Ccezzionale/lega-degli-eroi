@@ -39,11 +39,11 @@ body {
 
 /* Posizionamento personalizzato */
 [data-round="Semifinali"] {
-  margin-top: 90px;
+  margin-top: 135px;  /* perfettamente allineato con Q2 e Q3 */
 }
 
 [data-round="Finale"] {
-  margin-top: 180px;
+  margin-top: 190px;  /* più centrato tra le semifinali */
 }
 
 .match {
