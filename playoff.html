@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playoff Card NBA</title>
-  <link rel="stylesheet" href="playoff_card.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playoff Lega degli Eroi</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h1>PLAYOFF 2025</h1>
-  <div class="nba-grid">
-    <!-- I match verranno riempiti da playoff.js -->
-    <div class="match" id="WC1"></div>
-    <div class="match" id="WC2"></div>
-    <div class="match" id="WC3"></div>
-    <div class="match" id="WC4"></div>
-
-    <div class="match" id="Q1"></div>
-    <div class="match" id="Q2"></div>
-    <div class="match" id="Q3"></div>
-    <div class="match" id="Q4"></div>
-
-    <div class="match" id="S1"></div>
-    <div class="match" id="S2"></div>
-
-    <div class="match" id="F"></div>
+  <h1 class="titolo-playoff">🏆 Playoff - Lega degli Eroi</h1>
+  <div class="bracket">
+    <div class="round" data-round="Wildcard">
+      <div class="match" id="WC1"></div>
+      <div class="match" id="WC2"></div>
+      <div class="match" id="WC3"></div>
+      <div class="match" id="WC4"></div>
+    </div>
+    <div class="round" data-round="Quarti">
+      <div class="match" id="Q1"></div>
+      <div class="match" id="Q2"></div>
+      <div class="match" id="Q3"></div>
+      <div class="match" id="Q4"></div>
+    </div>
+    <div class="round" data-round="Semifinali">
+      <div class="match" id="S1"></div>
+      <div class="match" id="S2"></div>
+    </div>
+    <div class="round" data-round="Finale">
+      <div class="match" id="F"></div>
+    </div>
   </div>
-
-  <script defer src="risultati_playoff.js"></script>
-  <script defer src="playoff.js"></script>
+  <script src="risultati_playoff.js"></script>
+  <script src="playoff.js"></script>
 </body>
 </html>
+
