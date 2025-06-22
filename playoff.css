@@ -3,7 +3,7 @@ body {
   color: #212529;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 .titolo-playoff {
@@ -12,6 +12,7 @@ body {
   color: #212529;
   font-size: 2rem;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .bracket {
@@ -28,6 +29,7 @@ body {
   flex-direction: column;
   gap: 25px;
   position: relative;
+  min-width: 280px;
 }
 
 .round::before {
@@ -55,6 +57,9 @@ body {
   padding: 14px 18px;
   width: 280px;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .team {
@@ -62,9 +67,12 @@ body {
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
-  font-size: 15px;
-  color: #212529;
+  font-size: 16px;
+  color: #fff;
   margin: 8px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
 }
 
 .team img {
@@ -80,11 +88,10 @@ body {
   gap: 10px;
   white-space: nowrap;
   flex: 1;
-  text-transform: uppercase;
 }
 
 .score {
-  color: #212529;
+  color: #fff;
   font-size: 18px;
   margin-left: 12px;
 }
