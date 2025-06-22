@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lega degli Eroi</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <!-- NAV MOBILE -->
+  <div class="mobile-nav">
+  <span id="hamburger" class="hamburger">☰</span>
+  <a href="index.html" class="home-icon">🏠</a>
+</div>
+
+<ul class="navbar mobile-only hidden" id="mobileMenu">
+  <li><a href="rose.html">Rose</a></li>
+  <li><a href="classifica.html">Classifica</a></li>
+  <li class="dropdown">
+    <a href="#" id="toggle-draft">Draft ▾</a>
+    <ul class="submenu hidden" id="submenu-draft">
+      <li><a href="draft_championship.html">🟦 Conf.Championship</a></li>
+      <li><a href="draft_conference.html">🟨 Conf.League</a></li>
+    </ul>
+  </li>
+  <li><a href="svincolati.html">Svincolati</a></li>
+  <li><a href="chiamate.html">Chiamate</a></li>
+  <li><a href="albo.html">Albo d'Oro</a></li>
+  <li><a href="playoff.html">Playoff</a></li>
+</ul>
+
+  <!-- MENU DESKTOP -->
+  <ul class="navbar desktop-only">
+    <li><a href="index.html">🏠</a></li>
+    <li><a href="rose.html">Rose</a></li>
+    <li><a href="classifica.html">Classifica</a></li>
+    <li class="dropdown">
+      <a href="#" id="desktop-toggle-draft">Draft ▾</a>
+      <ul class="submenu hidden" id="desktop-submenu-draft">
+        <li><a href="draft_championship.html?tab=Draft Championship">🟦 Conf.Championship</a></li>
+        <li><a href="draft_conference.html?tab=Draft Conference">🟨 Conf.League</a></li>
+      </ul>
+    </li>
+    <li><a href="svincolati.html">Svincolati</a></li>
+    <li><a href="chiamate.html">Chiamate</a></li>
+    <li><a href="albo.html">Albo d'Oro</a></li>
+    <li><a href="highlander.html">Highlander</a></li>
+  </ul>
+</nav>
+
+<!-- CONTENUTO -->
+<main>
+  <div class="hero"></div>
+  <h1>Benvenuto nella Lega degli Eroi</h1>
+  <p>Seleziona una sezione dal menu.</p>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const draftToggle = document.getElementById("toggle-draft");
+    const draftSubmenu = document.getElementById("submenu-draft");
+
+    // Toggle apertura menu mobile
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+    });
+
+    // Toggle submenu draft mobile
+    draftToggle?.addEventListener("click", function (e) {
+      e.preventDefault();
+      draftSubmenu.classList.toggle("hidden");
+    });
+
+    // Chiude tutto se clicchi un link normale
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        if (link.id !== "toggle-draft") {
+          mobileMenu.classList.remove("show");
+          draftSubmenu.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
