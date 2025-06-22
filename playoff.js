@@ -4,7 +4,7 @@ const URL_CLASSIFICA_TOTALE = "https://docs.google.com/spreadsheets/d/e/2PACX-1v
 function creaHTMLSquadra(nome, posizione = "", punteggio = "") {
   const nomePulito = nome.replace(/[°]/g, "").trim();
   const usaLogo = !nome.toLowerCase().includes("vincente") && !nome.toLowerCase().includes("classificata");
-  const fileLogo = `img/${nomePulito.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.png`;
+  const fileLogo = `img/${nomePulito}.png`;
 
   return `
     <div class="team">
