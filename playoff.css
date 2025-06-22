@@ -1,6 +1,6 @@
 body {
-  background-color: #001f3f;
-  color: #ffffff;
+  background-color: #f8f9fa;
+  color: #212529;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -9,7 +9,9 @@ body {
 .titolo-playoff {
   text-align: center;
   margin-top: 20px;
-  color: #ffffff;
+  color: #212529;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .bracket {
@@ -18,7 +20,7 @@ body {
   justify-content: flex-start;
   padding: 40px 20px;
   align-items: flex-start;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .round {
@@ -33,27 +35,26 @@ body {
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #00ffff;
+  color: #007bff;
   font-size: 1.2rem;
   display: block;
 }
 
-/* Posizionamento personalizzato */
 [data-round="Semifinali"] {
-  margin-top: 135px;  /* perfettamente allineato con Q2 e Q3 */
+  margin-top: 135px;
 }
 
 [data-round="Finale"] {
-  margin-top: 190px;  /* centrato tra le semifinali */
+  margin-top: 190px;
 }
 
 .match {
-  background: linear-gradient(135deg, #001f3f, #0a154f);
-  border: 2px solid gold;
+  background: #ffffff;
+  border: 2px solid #ced4da;
   border-radius: 12px;
-  padding: 16px 20px; /* leggermente più spazio interno */
-  width: 280px;        /* più larga per gestire loghi grandi e testi lunghi */
-  box-shadow: 0 0 10px gold;
+  padding: 14px 18px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
 .team {
@@ -61,9 +62,9 @@ body {
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
-  font-size: 17px; /* da 15 a 17 */
-  color: #ffffff;
-  margin: 10px 0;
+  font-size: 15px;
+  color: #212529;
+  margin: 8px 0;
 }
 
 .team img {
@@ -79,16 +80,17 @@ body {
   gap: 10px;
   white-space: nowrap;
   flex: 1;
+  text-transform: uppercase;
 }
 
 .score {
-  color: gold;
-  font-size: 20px; /* un po' più grande per bilanciare il nuovo font */
-  margin-left: 14px;
+  color: #212529;
+  font-size: 18px;
+  margin-left: 12px;
 }
 
 .separator {
   height: 2px;
-  background-color: #00ffff;
+  background-color: #dee2e6;
   margin: 6px 0;
 }
