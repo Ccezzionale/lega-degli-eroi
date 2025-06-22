@@ -3,46 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playoff 2025 - Griglia</title>
+  <title>Playoff Griglia</title>
   <link rel="stylesheet" href="playoff_grid.css" />
 </head>
 <body>
   <h1>PLAYOFF 2025</h1>
-  <div class="bracket-grid">
-    <!-- Wild Card -->
-    <div class="round round-wc">
-      <div class="round-title">Wild Card</div>
-      <div class="match" id="WC1"><span></span><span class="vs">vs</span><span></span></div>
-      <div class="match" id="WC2"><span></span><span class="vs">vs</span><span></span></div>
-      <div class="match" id="WC3"><span></span><span class="vs">vs</span><span></span></div>
-      <div class="match" id="WC4"><span></span><span class="vs">vs</span><span></span></div>
-    </div>
+  <div class="grid-container">
+    <div class="match" id="WC1" style="grid-column:1; grid-row:1;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="WC2" style="grid-column:1; grid-row:2;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="WC3" style="grid-column:1; grid-row:3;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="WC4" style="grid-column:1; grid-row:4;"><span></span><span class="vs">vs</span><span></span></div>
 
-    <!-- Quarti -->
-    <div class="round round-qf">
-      <div class="round-title">Quarti</div>
-      <div class="match" id="Q1"><span></span><span class="vs">vs</span><span></span></div>
-      <div class="match" id="Q2"><span></span><span class="vs">vs</span><span></span></div>
-      <div class="match" id="Q3"><span></span><span class="vs">vs</span><span></span></div>
-      <div class="match" id="Q4"><span></span><span class="vs">vs</span><span></span></div>
-    </div>
+    <div class="match" id="Q1" style="grid-column:2; grid-row:1;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="Q2" style="grid-column:2; grid-row:2;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="Q3" style="grid-column:2; grid-row:3;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="Q4" style="grid-column:2; grid-row:4;"><span></span><span class="vs">vs</span><span></span></div>
 
-    <!-- Semifinali -->
-    <div class="round round-sf">
-      <div class="round-title">Semifinali</div>
-      <div class="match" id="S1"><span></span><span class="vs">vs</span><span></span></div>
-      <div class="match" id="S2"><span></span><span class="vs">vs</span><span></span></div>
-    </div>
+    <div class="match" id="S1" style="grid-column:3; grid-row:1 / span 2;"><span></span><span class="vs">vs</span><span></span></div>
+    <div class="match" id="S2" style="grid-column:3; grid-row:3 / span 2;"><span></span><span class="vs">vs</span><span></span></div>
 
-    <!-- Finale -->
-    <div class="round round-f">
-      <div class="round-title">Finale</div>
-      <div class="match" id="F"><span></span><span class="vs">vs</span><span></span></div>
-    </div>
+    <div class="match" id="F" style="grid-column:4; grid-row:2 / span 2;"><span></span><span class="vs">vs</span><span></span></div>
   </div>
 
   <script defer src="risultati_playoff.js"></script>
   <script defer src="playoff.js"></script>
 </body>
 </html>
-
