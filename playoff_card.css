@@ -51,8 +51,8 @@ body {
   background: linear-gradient(135deg, #001f3f, #0a154f);
   border: 2px solid gold;
   border-radius: 12px;
-  padding: 14px 18px;
-  width: 260px;
+  padding: 16px 20px; /* leggermente più spazio interno */
+  width: 280px;        /* più larga per gestire loghi grandi e testi lunghi */
   box-shadow: 0 0 10px gold;
 }
 
@@ -61,9 +61,9 @@ body {
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px; /* da 15 a 17 */
   color: #ffffff;
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
 .team img {
@@ -83,8 +83,8 @@ body {
 
 .score {
   color: gold;
-  font-size: 18px;
-  margin-left: 12px;
+  font-size: 20px; /* un po' più grande per bilanciare il nuovo font */
+  margin-left: 14px;
 }
 
 .separator {
