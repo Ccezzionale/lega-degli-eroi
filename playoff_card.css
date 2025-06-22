@@ -15,10 +15,10 @@ body {
 .bracket {
   display: flex;
   gap: 40px;
-  justify-content: flex-start; /* cambia da center a flex-start */
+  justify-content: flex-start;
   padding: 40px 20px;
   align-items: flex-start;
-  margin-left: -80px; /* sposta tutto verso sinistra */
+  margin-left: 30px;
 }
 
 .round {
