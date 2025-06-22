@@ -1,0 +1,869 @@
+/* --------- STILE GENERALE --------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #001f3f;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --------- NAVBAR DESKTOP --------- */
+nav {
+  background-color: #004080;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin: 0;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav ul.navbar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+nav ul.navbar li a.active,
+nav ul.navbar li a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* --------- HOME ICONA DESKTOP --------- */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #004080;
+    padding: 0 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 8px;
+  }
+
+  .home-icon {
+    display: inline-block;
+    font-size: 1.2em;
+    margin-left: 12px;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/* 👇 INCOLLA QUI SOTTO IL BLOCCO CSS PER IL MENU A TENDINA */
+@media (min-width: 769px) {
+  .navbar .dropdown:hover .submenu {
+    display: block !important;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    background-color: #002f5f;
+    border-radius: 6px;
+    padding: 6px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown .submenu li {
+    margin: 8px 0;
+  }
+
+  .dropdown .submenu li a {
+    display: block;
+    padding: 8px;
+    background-color: #003f7f;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+  }
+
+  .dropdown .submenu li a:hover {
+    background-color: #004f9f;
+    color: #ffcc00;
+  }
+}
+
+/* --------- MARGINE SOTTO LA NAVBAR --------- */
+main, h1, .container {
+  margin-top: 90px;
+}
+
+/* --------- TABELLA PICK --------- */
+#tabella-pick-container {
+  background-color: #004080;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+#tabella-pick {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #004080;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#tabella-pick th {
+  background-color: #005299;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding: 8px;
+  border: 1px solid #ffffff33;
+  text-align: center;
+}
+
+#tabella-pick td {
+  background-color: #003366;
+  color: white;
+  font-size: 0.9em;
+  padding: 8px;
+  border: 1px solid #ffffff33;
+  text-align: center;
+}
+
+#tabella-pick tr:nth-child(even) {
+  background-color: #002b5c;
+}
+
+#tabella-pick tr.next-pick {
+  background-color: #ffe680 !important;
+  color: black;
+  font-weight: bold;
+}
+
+.pick-completata {
+  background-color: #003366 !important;
+  font-weight: bold;
+  color: white !important;
+}
+
+/* --------- RESPONSIVE PER MOBILE --------- */
+@media (max-width: 768px) {
+  nav ul.navbar {
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  main {
+    margin-top: 70px;
+  }
+
+  nav ul.navbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav ul.navbar li {
+    flex: 0 0 auto;
+  }
+
+  nav ul.navbar li a {
+    font-size: 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .tabella-container,
+  .lista-container {
+    width: 100%;
+    min-width: unset;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+
+  th, td {
+    padding: 4px;
+  }
+
+  #lista-giocatori-table-container,
+  #tabella-pick-container {
+    max-height: 300px;
+  }
+
+  select,
+  input {
+    font-size: 0.8em;
+    padding: 4px 6px;
+    max-width: 150px;
+    border-radius: 6px;
+  }
+
+  #filtroRuolo,
+  #filtroSerieA,
+  #searchGiocatore {
+    padding: 4px 8px;
+    font-size: 0.8em;
+    max-width: 150px;
+    margin: 0 5px;
+  }
+}
+
+/* --------- TABELLA CHIAMATE --------- */
+#chiamate-container table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #004080;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+#chiamate-container th {
+  background-color: #005299;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #ffffff33;
+}
+
+#chiamate-container td {
+  background-color: #003366;
+  padding: 10px;
+  border: 1px solid #ffffff33;
+}
+
+#chiamate-container tr:nth-child(even) {
+  background-color: #002b5c;
+}
+
+#chiamate-container tr:hover {
+  background-color: #336699;
+}
+
+/* --------- BOTTONE CHIAMATE --------- */
+.bottone-chiamata {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #001f3f;
+  padding: 10px 20px;
+  margin: 15px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.bottone-chiamata:hover {
+  background-color: #ffd633;
+  color: #000;
+}
+
+/* --------- SWITCHER CONFERENCE --------- */
+.switcher {
+  margin: 20px;
+}
+.switcher button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.switcher button:hover {
+  background-color: #0059b3;
+}
+
+/* --------- AVVISO CHIAMATE BLOCCATE --------- */
+.avviso {
+  background-color: #0059b3;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* --------- SWITCHER CONFERENCE --------- */
+.switcher {
+  margin: 20px;
+}
+.switcher button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.switcher button:hover {
+  background-color: #0059b3;
+}
+
+/* --------- AVVISO CHIAMATE BLOCCATE --------- */
+.avviso {
+  background-color: #0059b3;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+
+/* --------- TABELLA CLASSIFICA --------- */
+#classifica-container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1000px;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  background-color: #004080;
+}
+
+#tabella-classifica {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #004080;
+  color: white;
+}
+
+#tabella-classifica th {
+  background-color: #ffcc00; color: #001f3f;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border: 1px solid #ffffff33;
+  text-align: center;
+}
+
+#tabella-classifica td {
+  background-color: #003366;
+  padding: 8px;
+  border: 1px solid #ffffff33;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#tabella-classifica tr:nth-child(even) {
+  background-color: #002b5c;
+}
+
+#tabella-classifica tr:hover {
+  background-color: #336699;
+}
+/* --------- ROSE SQUADRE --------- */
+#contenitore-rose {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.box-rosa {
+  background-color: #004080;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.box-rosa h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-squadra {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 8px;
+}
+
+.box-rosa table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.box-rosa th {
+  background-color: #005299;
+  padding: 8px;
+  border: 1px solid #ffffff33;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.box-rosa td {
+  background-color: #003366;
+  padding: 6px;
+  border: 1px solid #ffffff33;
+}
+
+.box-rosa tr:nth-child(even) {
+  background-color: #002b5c;
+}
+
+h1 {
+  color: #ffcc00;
+}
+
+#filtro-squadra option[value=""] {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* --------- RESPONSIVE ROSE --------- */
+/* --------- MOBILE (max-width: 768px) --------- */
+  .box-rosa {
+    width: 100%;
+    padding: 10px;
+  }
+
+.hidden {
+  display: none !important;
+}
+
+  .box-rosa table {
+    font-size: 0.8rem;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+
+  .moduli-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .bottone-chiamata {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .switcher {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .switcher button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  #chiamate-container {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 48px;
+    background-color: #004080;
+  }
+
+  .hamburger {
+    font-size: 1.6em;
+    cursor: pointer;
+    color: white;
+  }
+
+  .home-icon {
+    font-size: 1.4em;
+    text-decoration: none;
+  }
+
+  .navbar li {
+    width: 100%;
+  }
+
+  .navbar li a {
+    display: block;
+    width: 100%;
+    padding: 6px 0;
+    color: white;
+  }
+
+/* Stile base sottomenu */
+.submenu {
+  margin-left: 16px;
+  background-color: #002f5f;
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Nascondi submenu */
+.submenu.hidden {
+  display: none;
+}
+
+/* Mostra submenu (opzionale: se usi classList.add("show")) */
+.submenu.show {
+  display: block;
+}
+
+/* Stile elementi del submenu */
+.navbar .dropdown .submenu li {
+  margin: 8px 0;
+}
+
+.navbar .dropdown .submenu li a {
+  display: block;
+  padding: 8px;
+  background-color: #003f7f;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+}
+
+.navbar .dropdown .submenu li a:hover {
+  background-color: #004f9f;
+  color: #ffcc00;
+}
+
+/* Titolo principale */
+h1 {
+  font-size: 3em;
+  font-weight: 900;
+  text-align: center;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900, 0 0 30px #ff6600;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* Titoli round (Wild Card, Quarti, ecc.) */
+.round-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 12px #00cccc;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Bracket layout */
+.bracket {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  padding: 40px;
+  width: fit-content;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  min-width: 200px;
+}
+
+/* Match style */
+.match {
+  position: relative;
+  background: linear-gradient(145deg, #061d3f, #1a1f70);
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #ffcc00;
+  color: white;
+  text-align: center;
+  min-width: 240px;
+  box-shadow: 0 0 20px #ffcc00;
+  transition: transform 0.3s ease;
+}
+
+.match:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ffcc00;
+}
+
+/* Connessione fra match (visuale) */
+.match::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: #00ffff;
+}
+
+/* Stato partita conclusa */
+.match.conclusa {
+  border: 2px solid #00ffcc;
+  background: linear-gradient(to bottom, #001f3f, #004466);
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+/* Vittoria squadra A */
+.match.vittoria-a span:first-child {
+  color: #00ff88;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+/* Vittoria squadra B */
+.match.vittoria-b span:last-child {
+  color: #ff5555;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff5555;
+}
+
+/* Highlight punteggio */
+.match .vs {
+  color: #ffff00;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffaa00;
+}
+
+/* Contenuto match */
+.match span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 6px 0;
+  font-size: 1.15em;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Glow animato sul bordo */
+.match::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 16px;
+  background: linear-gradient(45deg, #ffcc00, #00ffff, #ff00cc, #ffcc00);
+  background-size: 300% 300%;
+  animation: glow-border 6s ease infinite;
+  z-index: 0;
+  opacity: 0.1;
+}
+
+@keyframes glow-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* MENU MOBILE - chiuso */
+#mobileMenu {
+  display: none;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  background-color: #004080;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 30px;
+  gap: 8px;
+  z-index: 9999;
+  text-align: left;
+}
+
+.match:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #00ffff;
+  cursor: pointer;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: auto;
+}
+
+body {
+  min-width: 100vw;
+}
+
+.bracket-container {
+  width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* rimuovi tutte le min-width fisse che bloccano lo scroll */
+.bracket {
+  display: flex;
+  gap: 60px;
+  padding: 40px;
+  box-sizing: border-box;
+  min-width: fit-content;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #001f3f;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.bracket-wrapper {
+  overflow-x: auto;
+  width: 100vw;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.bracket {
+  display: flex;
+  gap: 60px;
+  min-width: 1600px;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  min-width: 240px;
+}
+
+.round-title {
+  font-size: 1.4em;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.match {
+  background: linear-gradient(135deg, #001933, #000c1a);
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  padding: 20px 15px;
+  box-shadow: 0 0 15px #ffcc00;
+  text-align: center;
+  min-width: 200px;
+  color: #ffffff;
+}
+
+.match span {
+  display: block;
+  margin: 4px 0;
+}
+
+.match .vs {
+  color: #ffff00;
+  font-weight: bold;
+  text-shadow: 0 0 5px #ffff00;
+}
+
+
+/* MENU MOBILE - aperto */
+#mobileMenu.show {
+  display: flex !important;
+}
+
+/* --------- DESKTOP (min-width: 769px) --------- */
+@media (min-width: 769px) {
+  .hidden-on-mobile {
+    display: flex !important;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* --------- FIX MARGINE MOBILE --------- */
+@media (max-width: 768px) {
+  body.pagina-chiamate {
+    margin-top: 70px;
+  }
+}
