@@ -21,7 +21,7 @@ function creaHTMLSquadra(nome, posizione = "", punteggio = "") {
 
   return `
     <div class="team" style="background-color: ${colore}; text-transform: uppercase;">
-      <img src="img/${formattaNomePerLogo(nome)}.png" alt="${nome}" onerror="this.style.display='none'">
+      <img src="img/${nome.trim()}.png" alt="${nome}" onerror="this.style.display='none'">
       <div class="team-name">${nomePulito} ${posizione ? `(${posizione})` : ""}</div>
       <div class="score">${punteggio ?? ""}</div>
     </div>`;
