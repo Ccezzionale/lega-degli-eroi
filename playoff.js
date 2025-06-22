@@ -1,18 +1,32 @@
 const URL_CLASSIFICA_TOTALE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTduESMbJiPuCDLaAFdOHjep9GW-notjraILSyyjo6SA0xKSR0H0fgMLPNNYSwXgnGGJUyv14kjFRqv/pub?gid=691152130&single=true&output=csv";
 
-// 🔧 Funzione per creare HTML squadra con logo
+const coloriSquadre = {
+  "RAFA CASABLANCA": "#005f3f",
+  "UNION LIBRINO": "#c299ff",
+  "GIODY": "#0a0a1a",
+  "GIULAY": "#66ccff",
+  "RUBIN KEBAB": "#e60000",
+  "TEAM BARTOWSKI": "#990000",
+  "BAYENR CHRISTANSEN": "#990000",
+  "IBLA": "#aaffaa",
+  "MINNESODE TIMBERLAND": "#ff9933",
+  "POERMANTRA": "#4b0082",
+  "WILDBOYS": "#faff00",
+  "REAL MIMMO": "#ffaa00"
+};
+
 function creaHTMLSquadra(nome, posizione = "", punteggio = "") {
-  const nomePulito = nome.replace(/[°]/g, "").trim();
-  const usaLogo = !nome.toLowerCase().includes("vincente") && !nome.toLowerCase().includes("classificata");
-  const fileLogo = `img/${nomePulito}.png`;
+  const nomePulito = nome.replace(/[°]/g, "").trim().toUpperCase();
+  const colore = coloriSquadre[nomePulito] || "#ddd";  // fallback
 
   return `
-    <div class="team">
-      ${usaLogo ? `<img src="${fileLogo}" alt="${nome}" onerror="this.style.display='none'">` : ""}
-      <div class="team-name">${nome} ${posizione ? `(${posizione.replace('°','')})` : ""}</div>
+    <div class="team" style="background-color: ${colore}; text-transform: uppercase;">
+      <img src="img/${formattaNomePerLogo(nome)}.png" alt="${nome}" onerror="this.style.display='none'">
+      <div class="team-name">${nomePulito} ${posizione ? `(${posizione})` : ""}</div>
       <div class="score">${punteggio ?? ""}</div>
     </div>`;
 }
+
 
 function aggiornaPlayoff() {
   const posizioni = [
