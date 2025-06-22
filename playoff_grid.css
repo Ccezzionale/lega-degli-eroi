@@ -8,46 +8,32 @@ body {
 
 h1 {
   text-align: center;
-  padding: 20px 10px;
   color: #ffcc00;
   text-shadow: 0 0 10px #ffcc00;
-  font-size: 2.8em;
+  margin: 20px 0;
 }
 
-.bracket-grid {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 40px;
   padding: 40px;
+  justify-items: center;
+  align-items: center;
   overflow-x: auto;
 }
 
-.round {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-
-.round-title {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #00ffff;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px #00ffff;
-}
-
 .match {
-  position: relative;
   background: linear-gradient(145deg, #061d3f, #1a1f70);
   padding: 16px;
   border-radius: 12px;
   border: 2px solid #ffcc00;
-  text-align: center;
   min-width: 200px;
   width: 100%;
   max-width: 240px;
   box-shadow: 0 0 15px #ffcc00;
+  text-align: center;
 }
 
 .match span {
@@ -56,34 +42,17 @@ h1 {
   font-size: 1.1rem;
 }
 
-.match .vs {
+.vs {
   color: #ffcc00;
   font-weight: bold;
   font-size: 1.2em;
   text-shadow: 0 0 8px #ffaa00;
 }
 
-/* linee di connessione orizzontali */
-.match::after {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 50%;
-  width: 20px;
-  height: 2px;
-  background-color: #00ffff;
-}
-
-/* nascondi linea se ultimo round */
-.round-f .match::after {
-  display: none;
-}
-
-/* responsive */
 @media (max-width: 768px) {
-  .bracket-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
+  .grid-container {
+    grid-template-columns: repeat(4, 220px);
+    grid-auto-rows: auto;
+    overflow-x: scroll;
   }
 }
