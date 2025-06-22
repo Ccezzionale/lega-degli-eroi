@@ -15,9 +15,10 @@ body {
 .bracket {
   display: flex;
   gap: 40px;
-  justify-content: center;
+  justify-content: flex-start; /* cambia da center a flex-start */
   padding: 40px 20px;
   align-items: flex-start;
+  margin-left: -80px; /* sposta tutto verso sinistra */
 }
 
 .round {
@@ -43,15 +44,15 @@ body {
 }
 
 [data-round="Finale"] {
-  margin-top: 190px;  /* più centrato tra le semifinali */
+  margin-top: 190px;  /* centrato tra le semifinali */
 }
 
 .match {
   background: linear-gradient(135deg, #001f3f, #0a154f);
   border: 2px solid gold;
   border-radius: 12px;
-  padding: 10px 16px;
-  width: 240px;
+  padding: 14px 18px;
+  width: 260px;
   box-shadow: 0 0 10px gold;
 }
 
@@ -60,32 +61,34 @@ body {
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   color: #ffffff;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
 .team img {
-  width: 22px;
-  height: 22px;
-  margin-right: 6px;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 8px;
 }
 
 .team-name {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   white-space: nowrap;
+  flex: 1;
 }
 
 .score {
   color: gold;
-  font-size: 16px;
-  margin-left: 8px;
+  font-size: 18px;
+  margin-left: 12px;
 }
 
 .separator {
-  height: 1px;
+  height: 2px;
   background-color: #00ffff;
   margin: 6px 0;
 }
