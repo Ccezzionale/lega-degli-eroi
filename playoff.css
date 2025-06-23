@@ -1,48 +1,32 @@
 body {
-  background-color: #0b0c20;
+  background-color: #0a0c23;
+  color: #00e6ff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
-  padding: 20px 0;
+  padding: 20px;
   font-size: 2rem;
-  color: #00d0ff;
+  color: #00e6ff;
 }
 
-.tabella {
+.tabellone {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 30px;
-  padding: 30px;
-  justify-items: center;
-  align-items: start;
-}
-
-.colonna {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(8, auto);
+  gap: 10px 30px;
+  justify-content: center;
+  padding: 20px;
 }
 
 .cella {
-  background-color: #081030;
-  border: 1px solid #00f0ff;
+  background-color: #0f1536;
+  border: 1px solid #00e6ff;
+  padding: 10px;
   border-radius: 8px;
-  padding: 6px 10px;
-  min-width: 120px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-align: center;
-  box-shadow: 0 0 6px rgba(0, 240, 255, 0.2);
+  font-weight: 600;
+  min-width: 140px;
 }
-
-img {
-  max-width: 60px;
-  margin: 10px auto 0;
-  display: block;
-}
-
