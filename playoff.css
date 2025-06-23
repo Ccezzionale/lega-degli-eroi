@@ -62,51 +62,75 @@ body {
   gap: 10px;
 }
 
+/* BOX COMPLETO SQUADRA */
 .team {
   display: flex;
   flex-direction: column;
-  padding: 10px;
   border-radius: 10px;
+  background-color: #000; /* fallback */
+  padding: 10px;
+  gap: 4px;
   color: white;
   font-weight: bold;
   font-size: 16px;
   min-height: 70px;
-  gap: 4px;
 }
 
+/* RIGA SUPERIORE: logo, nome, posizione, punteggio */
 .top-line {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
+/* LOGO */
 .team img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
+  margin-right: 8px;
 }
 
+/* TESTO: posizione + nome squadra */
 .testo-squadra {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 }
 
 .posizione {
-  font-weight: 900;
-  margin-right: 4px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 700;
+  line-height: 1;
 }
 
+.nome-squadra {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/* PUNTEGGIO */
+.score {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  text-align: right;
+}
+
+/* Didascalia in basso tipo "series tied" */
 .serie-status {
   font-size: 13px;
   font-weight: normal;
-  opacity: 0.95;
-  margin-top: 2px;
+  opacity: 0.85;
+  margin-top: 6px;
   text-transform: none;
-  line-height: 1.1;
-  letter-spacing: 0.2px;
+  text-align: right;
+  letter-spacing: 0.3px;
 }
 
+/* Linea divisoria tra le due squadre */
 .separator {
   height: 2px;
   background-color: #dee2e6;
