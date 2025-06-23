@@ -1,79 +1,110 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Playoff Lega degli Eroi</title>
   <style>
     body {
       background-color: #0b0c1a;
-      color: #00eaff;
+      color: #00f0ff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       padding: 20px;
       text-align: center;
     }
 
     h1 {
-      color: #00eaff;
       margin-bottom: 30px;
-      text-transform: uppercase;
+      font-size: 2rem;
     }
 
-    .tabellone {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-template-rows: repeat(4, auto);
-      gap: 12px 40px;
+    .bracket {
+      display: flex;
       justify-content: center;
-      align-items: center;
-      margin-top: 40px;
+      gap: 30px;
+      flex-wrap: nowrap;
     }
 
-    .cella {
+    .colonna {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .match {
+      border: 1px solid #00f0ff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      min-width: 160px;
+    }
+
+    .finale {
+      font-weight: bold;
       background-color: #0b0c1a;
-      border: 1px solid #00eaff;
-      border-radius: 6px;
-      padding: 8px 12px;
-      font-size: 14px;
-      color: #00eaff;
-      min-width: 120px;
-      text-align: center;
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
-  <h1>Playoff Lega degli Eroi</h1>
-  <div class="tabellone">
-    <!-- WC1 -->
-    <div class="cella">Squadra 1 WC1</div>
-    <div class="cella">Squadra 2 WC1</div>
-    <div class="cella">Squadra 1 WC3</div>
-    <div class="cella">Squadra 2 WC3</div>
+  <h1>PLAYOFF LEGA DEGLI EROI</h1>
 
-    <!-- Q1-Q3 -->
-    <div class="cella">Squadra 1 Q1</div>
-    <div class="cella">Squadra 2 Q1</div>
-    <div class="cella">Squadra 1 Q3</div>
-    <div class="cella">Squadra 2 Q3</div>
+  <div class="bracket">
+    <!-- WC SX -->
+    <div class="colonna">
+      <div class="match">Squadra 1 WC1</div>
+      <div class="match">Squadra 2 WC1</div>
+      <div class="match">Squadra 1 WC3</div>
+      <div class="match">Squadra 2 WC3</div>
+    </div>
 
-    <!-- S1 - Finale - S2 -->
-    <div class="cella">Squadra 1 S1</div>
-    <div class="cella">Squadra 2 S1</div>
-    <div class="cella">Finale</div>
-    <div class="cella">Squadra 1 S2</div>
-    <div class="cella">Squadra 2 S2</div>
+    <!-- Q SX -->
+    <div class="colonna">
+      <div class="match">Squadra 1 Q1</div>
+      <div class="match">Squadra 2 Q1</div>
+      <div class="match">Squadra 1 Q3</div>
+      <div class="match">Squadra 2 Q3</div>
+    </div>
 
-    <!-- Q2-Q4 -->
-    <div class="cella">Squadra 1 Q2</div>
-    <div class="cella">Squadra 2 Q2</div>
-    <div class="cella">Squadra 1 Q4</div>
-    <div class="cella">Squadra 2 Q4</div>
+    <!-- S SX -->
+    <div class="colonna">
+      <div class="match">Squadra 1 S1</div>
+      <div class="match">Squadra 2 S1</div>
+      <div class="match"></div>
+      <div class="match"></div>
+    </div>
 
-    <!-- WC2 -->
-    <div class="cella">Squadra 1 WC2</div>
-    <div class="cella">Squadra 2 WC2</div>
-    <div class="cella">Squadra 1 WC4</div>
-    <div class="cella">Squadra 2 WC4</div>
+    <!-- Finale -->
+    <div class="colonna">
+      <div class="match finale">Finale</div>
+      <div class="match"></div>
+      <div class="match"></div>
+      <div class="match"></div>
+    </div>
+
+    <!-- S DX -->
+    <div class="colonna">
+      <div class="match">Squadra 1 S2</div>
+      <div class="match">Squadra 2 S2</div>
+      <div class="match"></div>
+      <div class="match"></div>
+    </div>
+
+    <!-- Q DX -->
+    <div class="colonna">
+      <div class="match">Squadra 1 Q2</div>
+      <div class="match">Squadra 2 Q2</div>
+      <div class="match">Squadra 1 Q4</div>
+      <div class="match">Squadra 2 Q4</div>
+    </div>
+
+    <!-- WC DX -->
+    <div class="colonna">
+      <div class="match">Squadra 1 WC2</div>
+      <div class="match">Squadra 2 WC2</div>
+      <div class="match">Squadra 1 WC4</div>
+      <div class="match">Squadra 2 WC4</div>
+    </div>
   </div>
 </body>
 </html>
-
