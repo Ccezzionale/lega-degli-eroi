@@ -1,57 +1,92 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playoff - Lega degli Eroi</title>
-  <link rel="stylesheet" href="playoff.css" />
+  <meta charset="UTF-8">
+  <title>Playoff Lega degli Eroi</title>
+  <style>
+    body {
+      background-color: #0b0c2a;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .playoff {
+      display: flex;
+      gap: 40px;
+      padding: 40px;
+      justify-content: center;
+    }
+
+    .colonna {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .match {
+      background-color: #0a1238;
+      color: white;
+      border: 1px solid #00f2ff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      width: 160px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .spazio {
+      height: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      padding-top: 20px;
+      color: #00f2ff;
+    }
+  </style>
 </head>
 <body>
-  <h1 class="titolo-playoff">PLAYOFF LEGA DEGLI EROI</h1>
-
-  <div class="playoff-container">
-    <!-- Colonna Wildcard sinistra -->
-    <div class="round">
-      <div class="match">WC1</div>
-      <div class="match">WC2</div>
+  <h1>PLAYOFF LEGA DEGLI EROI</h1>
+  <div class="playoff">
+    <div class="colonna">
+      <div class="match">Squadra 1 WC1</div>
+      <div class="match">Squadra 2 WC1</div>
+      <div class="spazio"></div>
+      <div class="match">Squadra 1 WC3</div>
+      <div class="match">Squadra 2 WC3</div>
     </div>
-
-    <!-- Colonna Quarti sinistra -->
-    <div class="round">
-      <div class="match">Q1</div>
-      <div class="match">Q2</div>
+    <div class="colonna">
+      <div class="match">Squadra 1 Q1</div>
+      <div class="match">Squadra 2 Q1</div>
+      <div class="spazio"></div>
+      <div class="match">Squadra 1 Q3</div>
+      <div class="match">Squadra 2 Q3</div>
     </div>
-
-    <!-- Colonna Semifinali sinistra -->
-    <div class="round">
-      <div class="match">S1</div>
+    <div class="colonna">
+      <div class="match">Squadra 1 S1</div>
+      <div class="match">Squadra 2 S1</div>
+      <div class="match">Finale</div>
+      <div class="match">Squadra 1 S2</div>
+      <div class="match">Squadra 2 S2</div>
     </div>
-
-    <!-- Coppa e Finale centrale -->
-    <div class="round center-round">
-      <img src="img/coppa.png" alt="Coppa" class="coppa-img" />
-      <div class="match finale">F</div>
+    <div class="colonna">
+      <div class="match">Squadra 1 Q2</div>
+      <div class="match">Squadra 2 Q2</div>
+      <div class="spazio"></div>
+      <div class="match">Squadra 1 Q4</div>
+      <div class="match">Squadra 2 Q4</div>
     </div>
-
-    <!-- Colonna Semifinali destra -->
-    <div class="round">
-      <div class="match">S2</div>
-    </div>
-
-    <!-- Colonna Quarti destra -->
-    <div class="round">
-      <div class="match">Q3</div>
-      <div class="match">Q4</div>
-    </div>
-
-    <!-- Colonna Wildcard destra -->
-    <div class="round">
-      <div class="match">WC3</div>
-      <div class="match">WC4</div>
+    <div class="colonna">
+      <div class="match">Squadra 1 WC2</div>
+      <div class="match">Squadra 2 WC2</div>
+      <div class="spazio"></div>
+      <div class="match">Squadra 1 WC4</div>
+      <div class="match">Squadra 2 WC4</div>
     </div>
   </div>
-
-  <script src="risultati_playoff.js"></script>
-  <script src="playoff.js"></script>
 </body>
 </html>
