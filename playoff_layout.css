@@ -110,3 +110,6 @@ h1 {
 }
 
 /* === LINEE DI CONNESSIONE CON SVG O ABSOLUTE (aggiungibili dopo) === */
+
+body { border: 10px solid red; }
+
