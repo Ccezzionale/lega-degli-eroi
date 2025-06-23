@@ -1,19 +1,21 @@
 const URL_CLASSIFICA_TOTALE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTduESMbJiPuCDLaAFdOHjep9GW-notjraILSyyjo6SA0xKSR0H0fgMLPNNYSwXgnGGJUyv14kjFRqv/pub?gid=691152130&single=true&output=csv";
 
-function creaHTMLSquadra(nome, posizione = "", punteggio = "", statusSerie = "") {
+function creaHTMLSquadra(nome, posizione = "", punteggio = "", didascalia = "") {
   const nomePulito = nome.replace(/[°]/g, "").trim().toUpperCase();
-  const colore = coloriSquadre[nomePulito] || "#ddd";
 
   return `
-    <div class="team" style="background-color: ${colore};">
-      <div class="top-line">
+    <div class="team-box">
+      <div class="team-row">
         <img src="img/${nome.trim()}.png" alt="${nome}" onerror="this.style.display='none'">
-        <div class="testo-squadra">
-          <div><span class="posizione">${posizione}</span> ${nomePulito}</div>
-          <div class="serie-status">${statusSerie}</div>
+        <div class="team-name-pos">
+          <div class="team-name">${nomePulito}</div>
+          <div class="team-pos">${posizione}</div>
         </div>
+        <div class="score">${punteggio ?? ""}</div>
       </div>
-    </div>`;
+      <div class="series-status">${didascalia}</div>
+    </div>
+  `;
 }
 
 
