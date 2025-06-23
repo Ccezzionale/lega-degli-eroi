@@ -1,29 +1,18 @@
 const URL_CLASSIFICA_TOTALE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTduESMbJiPuCDLaAFdOHjep9GW-notjraILSyyjo6SA0xKSR0H0fgMLPNNYSwXgnGGJUyv14kjFRqv/pub?gid=691152130&single=true&output=csv";
 
-const coloriSquadre = {
-  "RAFA CASABLANCA": "#005f3f",
-  "UNION LIBRINO": "#c299ff",
-  "GIODY": "#0a0a1a",
-  "GIULAY": "#66ccff",
-  "RUBIN KEBAB": "#e60000",
-  "TEAM BARTOWSKI": "#990000",
-  "BAYENR CHRISTANSEN": "#990000",
-  "IBLA": "#aaffaa",
-  "MINNESODE TIMBERLAND": "#ff9933",
-  "POERMANTRA": "#4b0082",
-  "WILDBOYS": "#faff00",
-  "REAL MIMMO": "#ffaa00"
-};
-
-function creaHTMLSquadra(nome, posizione = "", punteggio = "") {
+function creaHTMLSquadra(nome, posizione = "", punteggio = "", statusSerie = "") {
   const nomePulito = nome.replace(/[°]/g, "").trim().toUpperCase();
-  const colore = coloriSquadre[nomePulito] || "#ddd";  // fallback
+  const colore = coloriSquadre[nomePulito] || "#ddd";
 
   return `
-    <div class="team" style="background-color: ${colore}; text-transform: uppercase;">
-      <img src="img/${nome.trim()}.png" alt="${nome}" onerror="this.style.display='none'">
-      <div class="team-name">${nomePulito} ${posizione ? `(${posizione})` : ""}</div>
-      <div class="score">${punteggio ?? ""}</div>
+    <div class="team" style="background-color: ${colore};">
+      <div class="top-line">
+        <img src="img/${nome.trim()}.png" alt="${nome}" onerror="this.style.display='none'">
+        <div class="testo-squadra">
+          <div><span class="posizione">${posizione}</span> ${nomePulito}</div>
+          <div class="serie-status">${statusSerie}</div>
+        </div>
+      </div>
     </div>`;
 }
 
