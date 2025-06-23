@@ -1,43 +1,79 @@
-<div class="tabellone">
-  <!-- Colonna 1: WC SX -->
-  <div class="cella">Squadra 1 WC1</div>
-  <div class="cella">Squadra 2 WC1</div>
-  <div class="cella">Squadra 1 WC3</div>
-  <div class="cella">Squadra 2 WC3</div>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Playoff Lega degli Eroi</title>
+  <style>
+    body {
+      background-color: #0b0c1a;
+      color: #00eaff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
 
-  <!-- Colonna 2: Q SX -->
-  <div class="cella">Squadra 1 Q1</div>
-  <div class="cella">Squadra 2 Q1</div>
-  <div class="cella">Squadra 1 Q3</div>
-  <div class="cella">Squadra 2 Q3</div>
+    h1 {
+      color: #00eaff;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
 
-  <!-- Colonna 3: Semifinale SX -->
-  <div class="cella">Squadra 1 S1</div>
-  <div class="cella">Squadra 2 S1</div>
-  <div class="cella"></div>
-  <div class="cella"></div>
+    .tabellone {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(4, auto);
+      gap: 12px 40px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
 
-  <!-- Colonna 4: Finale -->
-  <div class="cella">Finale</div>
-  <div class="cella"></div>
-  <div class="cella"></div>
-  <div class="cella"></div>
+    .cella {
+      background-color: #0b0c1a;
+      border: 1px solid #00eaff;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #00eaff;
+      min-width: 120px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Playoff Lega degli Eroi</h1>
+  <div class="tabellone">
+    <!-- WC1 -->
+    <div class="cella">Squadra 1 WC1</div>
+    <div class="cella">Squadra 2 WC1</div>
+    <div class="cella">Squadra 1 WC3</div>
+    <div class="cella">Squadra 2 WC3</div>
 
-  <!-- Colonna 5: Semifinale DX -->
-  <div class="cella">Squadra 1 S2</div>
-  <div class="cella">Squadra 2 S2</div>
-  <div class="cella"></div>
-  <div class="cella"></div>
+    <!-- Q1-Q3 -->
+    <div class="cella">Squadra 1 Q1</div>
+    <div class="cella">Squadra 2 Q1</div>
+    <div class="cella">Squadra 1 Q3</div>
+    <div class="cella">Squadra 2 Q3</div>
 
-  <!-- Colonna 6: Q DX -->
-  <div class="cella">Squadra 1 Q2</div>
-  <div class="cella">Squadra 2 Q2</div>
-  <div class="cella">Squadra 1 Q4</div>
-  <div class="cella">Squadra 2 Q4</div>
+    <!-- S1 - Finale - S2 -->
+    <div class="cella">Squadra 1 S1</div>
+    <div class="cella">Squadra 2 S1</div>
+    <div class="cella">Finale</div>
+    <div class="cella">Squadra 1 S2</div>
+    <div class="cella">Squadra 2 S2</div>
 
-  <!-- Colonna 7: WC DX -->
-  <div class="cella">Squadra 1 WC2</div>
-  <div class="cella">Squadra 2 WC2</div>
-  <div class="cella">Squadra 1 WC4</div>
-  <div class="cella">Squadra 2 WC4</div>
-</div>
+    <!-- Q2-Q4 -->
+    <div class="cella">Squadra 1 Q2</div>
+    <div class="cella">Squadra 2 Q2</div>
+    <div class="cella">Squadra 1 Q4</div>
+    <div class="cella">Squadra 2 Q4</div>
+
+    <!-- WC2 -->
+    <div class="cella">Squadra 1 WC2</div>
+    <div class="cella">Squadra 2 WC2</div>
+    <div class="cella">Squadra 1 WC4</div>
+    <div class="cella">Squadra 2 WC4</div>
+  </div>
+</body>
+</html>
+
