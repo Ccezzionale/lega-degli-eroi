@@ -1,83 +1,62 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #000a3e; /* blu Champions League */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Playoff - Lega degli Eroi</title>
+  <link rel="stylesheet" href="playoff.css" />
+</head>
+<body>
+  <h1 class="titolo-playoff">PLAYOFF LEGA DEGLI EROI</h1>
 
-.titolo-playoff {
-  text-align: center;
-  font-size: 2.8rem;
-  color: #00bfff;
-  margin: 40px 0;
-  text-transform: uppercase;
-  font-weight: bold;
-}
+  <div class="bracket-grid">
+    <!-- Riga 1 -->
+    <div class="match">SQUADRA 1 WC1</div> <!-- A -->
+    <div class="match">SQUADRA 1 Q1</div>  <!-- B -->
+    <div class="match"></div>              <!-- C -->
+    <div class="match"></div>              <!-- D -->
+    <div class="match"></div>              <!-- E -->
+    <div class="match">SQUADRA 1 Q3</div>  <!-- F -->
+    <div class="match">SQUADRA 1 WC3</div> <!-- G -->
 
-.bracket-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 20px;
-  position: relative;
-  max-width: 100%;
-  overflow-x: auto;
-}
+    <!-- Riga 2 -->
+    <div class="match">SQUADRA 2 WC1</div>
+    <div class="match">SQUADRA 2 Q1</div>
+    <div class="match">SQUADRA 1 S1</div>
+    <div class="match">FINALE</div>
+    <div class="match">SQUADRA 1 S2</div>
+    <div class="match">SQUADRA 2 Q3</div>
+    <div class="match">SQUADRA 2 WC3</div>
 
-.round {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  flex: 1;
-}
+    <!-- Riga 3 -->
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="match">SQUADRA 2 S1</div>
+    <div class="empty"></div>
+    <div class="match">SQUADRA 2 S2</div>
+    <div class="empty"></div>
+    <div class="empty"></div>
 
-.match {
-  position: relative;
-  background-color: #001c5a;
-  border: 2px solid #00bfff;
-  border-radius: 12px;
-  padding: 10px;
-  min-width: 180px;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
-}
+    <!-- Riga 4 -->
+    <div class="match">SQUADRA 1 WC2</div>
+    <div class="match">SQUADRA 1 Q2</div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="match">SQUADRA 1 Q4</div>
+    <div class="match">SQUADRA 1 WC4</div>
 
-.match img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-bottom: 5px;
-}
+    <!-- Riga 5 -->
+    <div class="match">SQUADRA 2 WC2</div>
+    <div class="match">SQUADRA 2 Q2</div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="match">SQUADRA 2 Q4</div>
+    <div class="match">SQUADRA 2 WC4</div>
+  </div>
 
-.team-name {
-  font-size: 0.95rem;
-}
-
-.score {
-  color: #ffff00;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.label-round {
-  text-align: center;
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.coppa {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 35%;
-  width: 120px;
-  opacity: 0.9;
-  z-index: 0;
-}
+  <script src="risultati_playoff.js"></script>
+  <script src="playoff.js"></script>
+</body>
+</html>
