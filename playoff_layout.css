@@ -1,3 +1,4 @@
+
 /* === PLAYOFF LEGA DEGLI EROI - CHAMPIONS STYLE === */
 
 body {
@@ -92,7 +93,6 @@ h1 {
   margin-top: 3px;
 }
 
-/* === FINALE AL CENTRO CON COPPA === */
 #F {
   background: linear-gradient(135deg, #1a1a40, #000);
   border-color: gold;
@@ -100,7 +100,7 @@ h1 {
 }
 
 #F::before {
-  content: url('img/coppa.png'); /* Assicurati che l'immagine esista */
+  content: url('img/coppa.png');
   position: absolute;
   top: -80px;
   left: 50%;
@@ -108,8 +108,3 @@ h1 {
   width: 60px;
   height: auto;
 }
-
-/* === LINEE DI CONNESSIONE CON SVG O ABSOLUTE (aggiungibili dopo) === */
-
-body { border: 10px solid red; }
-
