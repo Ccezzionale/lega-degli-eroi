@@ -53,22 +53,25 @@ function aggiornaPlayoff() {
   matchDivs.forEach((match, idx) => {
     const spans = match.querySelectorAll("span");
 
-    // 🔹 Wildcard
-    if (idx < 4) {
-      const [i1, i2] = mappingPosWC[idx];
-      const matchId = mappingWC[idx];
-      const risultato = window.risultati?.find(r => r.partita === matchId);
+// 🔹 Wildcard (con nuova struttura HTML)
+if (idx < 4) {
+  const [i1, i2] = mappingPosWC[idx];
+  const matchId = mappingWC[idx];
+  const risultato = window.risultati?.find(r => r.partita === matchId);
 
-      const squadraA = risultato?.squadraA || squadre[i1]?.nome || "?";
-      const squadraB = risultato?.squadraB || squadre[i2]?.nome || "?";
-      const posizioneA = `${squadre.findIndex(s => s.nome === squadraA) + 1}°` || `${i1 + 1}°`;
-      const posizioneB = `${squadre.findIndex(s => s.nome === squadraB) + 1}°` || `${i2 + 1}°`;
-      const punteggioA = risultato?.golA ?? "";
-      const punteggioB = risultato?.golB ?? "";
+  const squadraA = risultato?.squadraA || squadre[i1]?.nome || "?";
+  const squadraB = risultato?.squadraB || squadre[i2]?.nome || "?";
+  const posizioneA = `${squadre.findIndex(s => s.nome === squadraA) + 1}°` || `${i1 + 1}°`;
+  const posizioneB = `${squadre.findIndex(s => s.nome === squadraB) + 1}°` || `${i2 + 1}°`;
+  const punteggioA = risultato?.golA ?? "";
+  const punteggioB = risultato?.golB ?? "";
 
-      spans[0].innerHTML = creaHTMLSquadra(squadraA, posizioneA, punteggioA);
-      spans[2].innerHTML = creaHTMLSquadra(squadraB, posizioneB, punteggioB);  
-    }
+  match.innerHTML = `
+    ${creaHTMLSquadra(squadraA, posizioneA, punteggioA)}
+    <div class="vs">vs</div>
+    ${creaHTMLSquadra(squadraB, posizioneB, punteggioB)}
+  `;
+}
 
     // 🔸 Quarti
        else if (idx >= 4 && idx <= 7) {
