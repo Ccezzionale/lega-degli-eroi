@@ -1,71 +1,55 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playoff Lega degli Eroi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playoff Grid</title>
   <style>
     body {
       background-color: #0b0c2a;
       color: white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      grid-template-rows: repeat(3, auto);
+      gap: 20px;
       text-align: center;
     }
-
-    h1 {
-      color: #00d9ff;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-    }
-
-    .griglia-colonna {
-      display: grid;
-      grid-template-rows: repeat(8, auto);
-      row-gap: 18px;
-      justify-items: center;
-    }
-
-    .match-row {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-    }
-
     .match {
       background-color: #101840;
-      padding: 6px 10px;
+      padding: 10px 20px;
       border-radius: 10px;
-      box-shadow: 0 0 6px #00ffff66;
-      text-align: center;
-      font-size: 0.85rem;
+      box-shadow: 0 0 6px #00ffffaa;
       font-weight: bold;
-      width: 180px;
+    }
+    .empty {
+      visibility: hidden;
     }
   </style>
 </head>
 <body>
-  <h1>PLAYOFF LEGA DEGLI EROI</h1>
-  <div class="griglia-colonna">
-    <div class="match-row">
-      <div class="match">Team A vs Team B</div>
-      <div class="match">Team C vs Team D</div>
-    </div>
-    <div class="match-row">
-      <div class="match">Team E vs Team F</div>
-      <div class="match">Team G vs Team H</div>
-    </div>
-    <div class="match-row">
-      <div class="match">Team I vs Team J</div>
-      <div class="match">Team K vs Team L</div>
-    </div>
-    <div class="match-row">
-      <div class="match">Semifinale 1</div>
-      <div class="match">Semifinale 2</div>
-    </div>
+  <div class="grid">
+    <div class="match">WC1</div>
+    <div class="match">Q1</div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="match">Q3</div>
+    <div class="match">WC3</div>
+
+    <div class="match">WC2</div>
+    <div class="match">Q2</div>
+    <div class="match">S1</div>
+    <div class="match">Finale</div>
+    <div class="match">S2</div>
+    <div class="match">Q4</div>
+    <div class="match">WC4</div>
   </div>
 </body>
-</html>
-
 </html>
