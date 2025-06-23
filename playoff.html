@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playoff - Lega degli Eroi</title>
-  <link rel="stylesheet" href="playoff.css" />
+  <title>Playoff Lega degli Eroi</title>
   <style>
     body {
       background-color: #0b0c2a;
@@ -14,86 +13,79 @@
       padding: 20px;
       text-align: center;
     }
-    .titolo-playoff {
+
+    .titolo {
       font-size: 2.5rem;
+      color: #00ffff;
       font-weight: bold;
       margin-bottom: 40px;
-      color: #00cfff;
     }
+
     .bracket-container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      gap: 20px;
     }
-    .match {
-      background-color: #101840;
-      border: 2px solid #00cfff;
-      border-radius: 10px;
-      padding: 10px 20px;
-      margin: 10px auto;
-      width: 180px;
-      box-shadow: 0 0 10px #00ffff44;
-    }
-    .round {
+
+    .colonna {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      gap: 20px;
+      flex: 1;
+      min-width: 200px;
     }
-    .coppa {
-      margin-top: 50px;
+
+    .match {
+      background-color: #101840;
+      border: 1px solid #00ffff;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00ffff44;
+    }
+
+    .finale {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .finale img {
+      width: 80px;
     }
   </style>
 </head>
 <body>
-  <h1 class="titolo-playoff">PLAYOFF LEGA DEGLI EROI</h1>
+  <div class="titolo">PLAYOFF LEGA DEGLI EROI</div>
   <div class="bracket-container">
-    <!-- Colonna Wild Card -->
-    <div class="round">
+    <!-- Sinistra -->
+    <div class="colonna">
       <div class="match">Team A vs Team B</div>
-      <div style="height: 60px"></div>
       <div class="match">Team C vs Team D</div>
-      <div style="height: 120px"></div>
-      <div class="match">Team G vs Team H</div>
-      <div style="height: 60px"></div>
-      <div class="match">Team I vs Team J</div>
-    </div>
-
-    <!-- Colonna Quarti -->
-    <div class="round">
-      <div style="height: 45px"></div>
       <div class="match">Vincente WC1 vs Team E</div>
-      <div style="height: 90px"></div>
       <div class="match">Vincente WC2 vs Team F</div>
-      <div style="height: 90px"></div>
-      <div class="match">Vincente WC3 vs Team K</div>
-      <div style="height: 90px"></div>
-      <div class="match">Vincente WC4 vs Team L</div>
-    </div>
-
-    <!-- Colonna Semifinali -->
-    <div class="round">
-      <div style="height: 120px"></div>
       <div class="match">Vincente Q1 vs Vincente Q2</div>
-      <div style="height: 240px"></div>
-      <div class="match">Vincente Q3 vs Vincente Q4</div>
     </div>
 
-    <!-- Colonna Finale -->
-    <div class="round">
-      <div style="height: 260px"></div>
+    <!-- Finale centrale -->
+    <div class="finale">
       <div class="match">Vincente S1 vs Vincente S2</div>
+      <img src="img/coppa.png" alt="Coppa">
     </div>
 
-    <!-- Coppa al centro -->
-    <div class="round">
-      <div class="coppa">
-        <img src="img/coppa.png" alt="Coppa" width="80" />
-        <div>Coppa</div>
-      </div>
+    <!-- Destra -->
+    <div class="colonna">
+      <div class="match">Team G vs Team H</div>
+      <div class="match">Team I vs Team J</div>
+      <div class="match">Vincente WC3 vs Team K</div>
+      <div class="match">Vincente WC4 vs Team L</div>
+      <div class="match">Vincente Q3 vs Vincente Q4</div>
     </div>
   </div>
 </body>
