@@ -5,42 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Playoff - Lega degli Eroi</title>
   <link rel="stylesheet" href="playoff.css" />
+  <style>
+    body {
+      background-color: #000b33;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .titolo-playoff {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .bracket {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 0 40px;
+    }
+
+    .round {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .round-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex: 1;
+    }
+
+    .match {
+      background-color: #0b1a55;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 8px #00ffff55;
+    }
+
+    .match img {
+      height: 30px;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+
+    .coppa {
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .finale {
+      background-color: #111a40;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 15px;
+    }
+  </style>
 </head>
 <body>
   <h1 class="titolo-playoff">PLAYOFF LEGA DEGLI EROI</h1>
   <div class="bracket">
-    <!-- Colonna 1: Wild Card (sx) -->
-    <div class="round">
-      <div class="match">Wild Card 1<br>Team A vs Team B</div>
-      <div class="match">Wild Card 2<br>Team C vs Team D</div>
+    <!-- Colonna sinistra -->
+    <div class="round round-sx">
+      <div class="match">Wild Card 1<br><img src="img/logo_teamA.png" alt="Team A" /> vs <img src="img/logo_teamB.png" alt="Team B" /></div>
+      <div class="match">Wild Card 2<br><img src="img/logo_teamC.png" alt="Team C" /> vs <img src="img/logo_teamD.png" alt="Team D" /></div>
+      <div class="match">Quarto 1<br><img src="img/logo_teamW1.png" alt="Vincente WC1" /> vs <img src="img/logo_teamE.png" alt="Team E" /></div>
+      <div class="match">Quarto 2<br><img src="img/logo_teamW2.png" alt="Vincente WC2" /> vs <img src="img/logo_teamF.png" alt="Team F" /></div>
+      <div class="match">Semifinale 1<br><img src="img/logo_teamQ1.png" alt="Vincente Q1" /> vs <img src="img/logo_teamQ2.png" alt="Vincente Q2" /></div>
     </div>
 
-    <!-- Colonna 2: Quarti (sx) -->
-    <div class="round">
-      <div class="match">Quarto 1<br>Winner WC1 vs Team E</div>
-      <div class="match">Quarto 2<br>Winner WC2 vs Team F</div>
+    <!-- Colonna centrale -->
+    <div class="round round-center">
+      <img src="img/coppa.png" alt="Coppa" class="coppa" />
+      <div class="match finale">Finale<br><img src="img/logo_teamS1.png" alt="Vincente S1" /> vs <img src="img/logo_teamS2.png" alt="Vincente S2" /></div>
     </div>
 
-    <!-- Colonna 3: Semifinale + Coppa + Finale -->
-    <div class="center-round">
-      <div class="match">Semifinale 1<br>Winner Q1 vs Winner Q2</div>
-      <div class="trophy">
-        <img src="img/coppa.png" alt="Coppa" />
-      </div>
-      <div class="match finale">Finale<br>Winner SF1 vs Winner SF2</div>
-    </div>
-
-    <!-- Colonna 4: Quarti (dx) -->
-    <div class="round">
-      <div class="match">Quarto 3<br>Winner WC3 vs Team G</div>
-      <div class="match">Quarto 4<br>Winner WC4 vs Team H</div>
-    </div>
-
-    <!-- Colonna 5: Wild Card (dx) -->
-    <div class="round">
-      <div class="match">Wild Card 3<br>Team I vs Team J</div>
-      <div class="match">Wild Card 4<br>Team K vs Team L</div>
+    <!-- Colonna destra -->
+    <div class="round round-dx">
+      <div class="match">Wild Card 3<br><img src="img/logo_teamG.png" alt="Team G" /> vs <img src="img/logo_teamH.png" alt="Team H" /></div>
+      <div class="match">Wild Card 4<br><img src="img/logo_teamI.png" alt="Team I" /> vs <img src="img/logo_teamJ.png" alt="Team J" /></div>
+      <div class="match">Quarto 3<br><img src="img/logo_teamW3.png" alt="Vincente WC3" /> vs <img src="img/logo_teamK.png" alt="Team K" /></div>
+      <div class="match">Quarto 4<br><img src="img/logo_teamW4.png" alt="Vincente WC4" /> vs <img src="img/logo_teamL.png" alt="Team L" /></div>
+      <div class="match">Semifinale 2<br><img src="img/logo_teamQ3.png" alt="Vincente Q3" /> vs <img src="img/logo_teamQ4.png" alt="Vincente Q4" /></div>
     </div>
   </div>
+
+  <script src="risultati_playoff.js"></script>
+  <script src="playoff.js"></script>
 </body>
 </html>
+
