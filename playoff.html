@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Playoff - Lega degli Eroi</title>
-  <link rel="stylesheet" href="playoff.css">
+  <link rel="stylesheet" href="playoff.css" />
 </head>
 <body>
-  <h1 class="titolo">PLAYOFF LEGA DEGLI EROI</h1>
-  <div class="bracket-container">
-    <div class="side left">
-      <div class="round wildcard">
-        <div class="match">Wild Card 1</div>
-        <div class="match">Wild Card 2</div>
-      </div>
-      <div class="round quarti">
-        <div class="match">Quarto 1</div>
-        <div class="match">Quarto 2</div>
-      </div>
-      <div class="round semifinale">
-        <div class="match">Semifinale 1</div>
-      </div>
+  <h1 class="titolo-playoff">PLAYOFF LEGA DEGLI EROI</h1>
+  <div class="bracket">
+    <!-- Colonna 1: Wild Card (sx) -->
+    <div class="round">
+      <div class="match">Wild Card 1<br>Team A vs Team B</div>
+      <div class="match">Wild Card 2<br>Team C vs Team D</div>
     </div>
 
-    <div class="coppa">
-      <img src="img/coppa.png" alt="Coppa" class="img-coppa">
+    <!-- Colonna 2: Quarti (sx) -->
+    <div class="round">
+      <div class="match">Quarto 1<br>Winner WC1 vs Team E</div>
+      <div class="match">Quarto 2<br>Winner WC2 vs Team F</div>
     </div>
 
-    <div class="side right">
-      <div class="round wildcard">
-        <div class="match">Wild Card 3</div>
-        <div class="match">Wild Card 4</div>
+    <!-- Colonna 3: Semifinale + Coppa + Finale -->
+    <div class="center-round">
+      <div class="match">Semifinale 1<br>Winner Q1 vs Winner Q2</div>
+      <div class="trophy">
+        <img src="img/coppa.png" alt="Coppa" />
       </div>
-      <div class="round quarti">
-        <div class="match">Quarto 3</div>
-        <div class="match">Quarto 4</div>
-      </div>
-      <div class="round semifinale">
-        <div class="match">Semifinale 2</div>
-      </div>
+      <div class="match finale">Finale<br>Winner SF1 vs Winner SF2</div>
     </div>
-  </div>
 
-  <div class="finale">
-    <div class="match">Finale</div>
+    <!-- Colonna 4: Quarti (dx) -->
+    <div class="round">
+      <div class="match">Quarto 3<br>Winner WC3 vs Team G</div>
+      <div class="match">Quarto 4<br>Winner WC4 vs Team H</div>
+    </div>
+
+    <!-- Colonna 5: Wild Card (dx) -->
+    <div class="round">
+      <div class="match">Wild Card 3<br>Team I vs Team J</div>
+      <div class="match">Wild Card 4<br>Team K vs Team L</div>
+    </div>
   </div>
 </body>
 </html>
