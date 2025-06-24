@@ -10,12 +10,17 @@ body {
   background-size: cover;
   color: #00f0ff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   text-align: center;
-  overflow-x: auto; /* ✅ Abilita scroll orizzontale */
-  overflow-y: hidden; /* ✅ Evita scroll verticale extra */
-  max-height: 100vh; /* ✅ Limita l'altezza su mobile */
+}
+
+html {
+  height: 100vh;
+  overflow: hidden;
 }
 
 .bracket {
