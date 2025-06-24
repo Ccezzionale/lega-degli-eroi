@@ -91,17 +91,19 @@ if (finale?.vincente) {
   const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
 
   const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim()}.png`;
-  console.log("Logo vincitore URL:", logoSrc); // ✅ utile per debug
+  console.log("Logo vincitore URL:", logoSrc);
 
   const htmlVincitore = `
-    <div class="vincitore-info">
-      <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
-      <div class="nome-vincitore">${posizioneText} ${nomeVincitore}</div>
-    </div>`;
-    
+    <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
+    <div class="nome-vincitore">${posizioneText} ${nomeVincitore}</div>
+  `;
+
   const container = document.getElementById("vincitore-assoluto");
-  if (container) container.innerHTML = htmlVincitore;
-}
+  if (container) {
+    container.innerHTML = htmlVincitore;
+  } else {
+    console.warn("⚠️ Impossibile trovare #vincitore-assoluto");
+  }
 }
 
 // ✅ Caricamento CSV
