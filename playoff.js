@@ -98,3 +98,4 @@ fetch(URL_CLASSIFICA_TOTALE)
     window.squadre = squadre;
     aggiornaPlayoff();
   });
+    .catch(err => console.error("Errore nel caricamento classifica:", err));
