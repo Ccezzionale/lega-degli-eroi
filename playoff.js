@@ -100,5 +100,5 @@ fetch(URL_CLASSIFICA_TOTALE)
     squadre.sort((a, b) => b.punti - a.punti || b.mp - a.mp);
     window.squadre = squadre;
     aggiornaPlayoff();
-  }) // 👈 questa chiude il .then
-  .catch(err => console.error("Errore nel caricamento classifica:", err));
+  }) // 👈 chiude il secondo then
+  .catch(err => console.error("Errore nel caricamento classifica:", err)); // 👈 chiude la fetch
