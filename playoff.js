@@ -84,21 +84,24 @@ document.querySelectorAll(".match").forEach(div => {
   }); // 🔚 fine forEach
 
   // 🏆 Inserimento vincitore sotto la coppa (solo una volta)
-  const finale = window.risultati?.find(r => r.partita === "F");
-  if (finale?.vincente) {
-    const nomeVincitore = finale.vincente;
-    const posizione = window.squadre?.findIndex(s => s.nome === nomeVincitore);
-    const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
+const finale = window.risultati?.find(r => r.partita === "F");
+if (finale?.vincente) {
+  const nomeVincitore = finale.vincente;
+  const posizione = window.squadre?.findIndex(s => s.nome === nomeVincitore);
+  const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
 
-const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim().replaceAll(" ", "%20")}.png`;
-const htmlVincitore = `
-  <div class="vincitore-info">
-    <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
-    <div class="nome-vincitore">${posizioneText} ${nomeVincitore}</div>
-  </div>`;
-const container = document.getElementById("vincitore-assoluto");
-if (container) container.innerHTML = htmlVincitore;
-  }
+  const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim().replaceAll(" ", "%20")}.png`;
+  console.log("🟡 Logo vincitore URL:", logoSrc);
+
+  const htmlVincitore = `
+    <div class="vincitore-info">
+      <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
+      <div class="nome-vincitore">${posizioneText} ${nomeVincitore}</div>
+    </div>`;
+
+  const container = document.getElementById("vincitore-assoluto");
+  if (container) container.innerHTML = htmlVincitore;
+}
 }
 // ✅ Caricamento CSV
 fetch(URL_CLASSIFICA_TOTALE)
