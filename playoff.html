@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, minimum-scale=0.5">
   <title>Playoff Lega degli Eroi</title>
   <script src="risultati_playoff.js" defer></script>
   <script src="playoff.js" defer></script>
@@ -14,7 +14,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 100vh;
       overflow-x: auto;
-      overflow-y: hidden;
+      overflow-y: auto;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -22,7 +22,7 @@
 
     html {
       height: 100vh;
-      overflow: hidden;
+      overflow-y: auto;
     }
 
     .bracket {
