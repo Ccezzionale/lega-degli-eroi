@@ -90,9 +90,14 @@ document.querySelectorAll(".match").forEach(div => {
     const posizione = window.squadre?.findIndex(s => s.nome === nomeVincitore);
     const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
 
-    const htmlVincitore = creaHTMLSquadra(nomeVincitore, posizioneText, "", true);
-    const container = document.getElementById("vincitore-assoluto");
-    if (container) container.innerHTML = htmlVincitore;
+    const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim()}.png`;
+const htmlVincitore = `
+  <div class="vincitore-info">
+    <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
+    <div class="nome-vincitore">${posizioneText} ${nomeVincitore}</div>
+  </div>`;
+const container = document.getElementById("vincitore-assoluto");
+if (container) container.innerHTML = htmlVincitore;
   }
 }
 // ✅ Caricamento CSV
