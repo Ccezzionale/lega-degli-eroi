@@ -77,8 +77,9 @@ function aggiornaPlayoff() {
     div.innerHTML = creaHTMLSquadra(nome, posizione, punteggio);
     if (risultato?.vincente === nome) {
   div.classList.add("vincente");
+   }
+  }); // 👈 questa graffa mancava per chiudere aggiornaPlayoff
 }
-
 // ✅ Caricamento CSV
 fetch(URL_CLASSIFICA_TOTALE)
   .then(res => res.text())
