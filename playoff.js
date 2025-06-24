@@ -102,6 +102,8 @@ if (finale?.vincente) {
   const container = document.getElementById("vincitore-assoluto");
   if (container) container.innerHTML = htmlVincitore;
 }
+}
+
 // ✅ Caricamento CSV
 fetch(URL_CLASSIFICA_TOTALE)
   .then(res => res.text())
