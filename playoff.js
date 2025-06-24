@@ -95,7 +95,7 @@ document.querySelectorAll(".match").forEach(div => {
 
     const htmlVincitore = `
       <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
-      <div class="nome-vincitore">${posizioneText} ${nomeVincitore}</div>
+      <div class="nome-vincitore">${nomeVincitore}</div>
     `;
     const container = document.getElementById("vincitore-assoluto");
     if (container) container.innerHTML = htmlVincitore;
