@@ -84,18 +84,21 @@ fetch(URL_CLASSIFICA_TOTALE)
   .then(res => res.text())
   .then(csv => {
     const righe = csv.trim().split("\n");
+    const startRow = 1;
     const squadre = [];
-    for (let i = 1; i < righe.length; i++) {
+
+    for (let i = startRow; i < righe.length; i++) {
       const colonne = righe[i].split(",").map(c => c.replace(/"/g, "").trim());
       const nome = colonne[1];
-      const punti = parseInt(colonne[10]) || 0;
+      const punti = parseInt(colonne[10]);
       const mp = parseFloat(colonne[11].replace(",", ".")) || 0;
       if (!nome || isNaN(punti)) continue;
       squadre.push({ nome, punti, mp });
       if (squadre.length === 12) break;
     }
+
     squadre.sort((a, b) => b.punti - a.punti || b.mp - a.mp);
     window.squadre = squadre;
     aggiornaPlayoff();
-  });
-    .catch(err => console.error("Errore nel caricamento classifica:", err));
+  }) // 👈 questa chiude il .then
+  .catch(err => console.error("Errore nel caricamento classifica:", err));
