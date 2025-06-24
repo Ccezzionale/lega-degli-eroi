@@ -70,20 +70,20 @@
       color: #00f0ff;
     }
 
-    .match.vincente {
-      border: 2px solid gold;
-      box-shadow: 0 0 8px gold;
-      animation: glow 1.2s ease-in-out infinite alternate;
-    }
+.match.vincente {
+  border: 3px solid #ffcc00; /* aumentato da 2px a 3px */
+  box-shadow: 0 0 12px #ffcc00, 0 0 24px #ffcc00; /* glow più potente */
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
 
-    @keyframes glow {
-      from {
-        box-shadow: 0 0 5px gold;
-      }
-      to {
-        box-shadow: 0 0 15px gold;
-      }
-    }
+@keyframes glow {
+  from {
+    box-shadow: 0 0 8px #ffcc00;
+  }
+  to {
+    box-shadow: 0 0 20px #ffcc00;
+  }
+}
 
     .match img {
       max-width: 30px;
@@ -104,10 +104,10 @@
       max-width: 24px;
     }
 
-  .squadra.orizzontale span {
-    color: #ffcc00;
-    font-weight: bold;
-  }
+.squadra.orizzontale span {
+  color: #00f0ff;
+  font-weight: bold; /* oppure puoi lasciare bold se ti piace */
+}
 
     .spaziata {
       margin-top: 100px;
