@@ -6,37 +6,45 @@
   <title>Playoff Lega degli Eroi</title>
   <script src="risultati_playoff.js" defer></script>
   <script src="playoff.js" defer></script>
-</head>
   <style>
-body {
-  background: url('img/champions_bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #00f0ff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
+    body {
+      background: url('img/champions_bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #00f0ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-html {
-  height: 100vh;
-  overflow: hidden;
-}
+    html {
+      height: 100vh;
+      overflow: hidden;
+    }
 
-.bracket {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap; /* ✅ Nessun ritorno a capo */
-  gap: 30px;
-  width: max-content; /* ✅ Mantieni larghezza adattiva */
-}
+    .bracket {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 30px;
+      width: max-content;
+      padding-top: 40px;
+    }
 
-    h1 {
-      margin-bottom: 30px;
-      font-size: 2rem;
+    .blocco-colonna {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .blocco-colonna h2 {
+      margin-bottom: 10px;
+      color: #00f0ff;
+      font-size: 1.2rem;
     }
 
     .colonna {
@@ -57,118 +65,98 @@ html {
       background-color: #0b0c1a;
       color: #ffffff;
     }
-    
+
     .match img {
-  max-width: 60px;
-  max-height: 60px;
-  object-fit: contain;
-}
+      max-width: 60px;
+      max-height: 60px;
+      object-fit: contain;
+    }
 
-    
-  .spaziata {
-  margin-top: 100px;
-}
-    
-.semifinale-sx,
-.semifinale-dx {
-  margin-top: 75px;
-}
+    .spaziata {
+      margin-top: 100px;
+    }
 
-.wc-dx {
-  margin-left: 0px; /* o -60px se vuoi ancora più a sinistra */
-}
-    
-.wc-sx {
-  margin-left: -0px; /* o -60px se vuoi ancora più a sinistra */
-}
-    
-.bracket {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-}
+    .semifinale-sx,
+    .semifinale-dx {
+      margin-top: 75px;
+    }
 
-.blocco-colonna {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .wc-dx {
+      margin-left: 0px;
+    }
 
-.blocco-colonna h2 {
-  margin-bottom: 10px;
-  color: #00f0ff;
-  font-size: 1.2rem;
-}
-
-   
+    .wc-sx {
+      margin-left: 0px;
+    }
   </style>
 </head>
 <body>
   <h1>PLAYOFF LEGA DEGLI EROI</h1>
   <div class="bracket">
-    <!-- WC SX -->
-    <h2>Wildcard</h2>
     <div class="blocco-colonna">
-    <div class="colonna wc-sx">
-      <div class="match" data-match="WC1-A"></div>
-      <div class="match" data-match="WC1-B"></div>
-      <div class="match spaziata" data-match="WC3-A"></div>
-      <div class="match" data-match="WC3-B"></div>
-    </div>
-
-    <!-- Q SX -->
-    <div class="blocco-colonna">
-    <div class="colonna">
-      <h2>Quarti</h2>
-      <div class="match" data-match="Q1-A"></div>
-      <div class="match" data-match="Q1-B"></div>
-      <div class="match spaziata" data-match="Q3-A"></div>
-      <div class="match" data-match="Q3-B"></div>
-    </div>
-
-    <!-- S SX -->
-    <div class="blocco-colonna">
-    <div class="colonna semifinale-sx">
-      <h2>Semifinale</h2>
-      <div class="match" data-match="S1-A"></div>
-      <div class="match" data-match="S1-B"></div>
-    </div>
-
-    <!-- Finale -->
-    <div class="blocco-colonna">
-    <div class="colonna">
-      <h2>Finale</h2>
-      <div class="match finale" data-match="F-A"></div>
-      <div class="match finale" data-match="F-B"></div>
-    </div>
-
-    <!-- S DX -->
-      <div class="blocco-colonna">
-    <div class="colonna semifinale-dx">
-      <h2>Semifinale</h2>
-      <div class="match" data-match="S2-A"></div>
-      <div class="match" data-match="S2-B"></div>
-    </div>
-
-    <!-- Q DX -->
-    <div class="blocco-colonna">
-    <div class="colonna">
-      <h2>Quarti</h2>
-      <div class="match" data-match="Q2-A"></div>
-      <div class="match" data-match="Q2-B"></div>
-      <div class="match spaziata" data-match="Q4-A"></div>
-      <div class="match" data-match="Q4-B"></div>
-    </div>
-
-    <!-- WC DX -->
-    <div class="blocco-colonna">
-    <div class="colonna wc-dx">
       <h2>Wildcard</h2>
-      <div class="match" data-match="WC2-A"></div>
-      <div class="match" data-match="WC2-B"></div>
-      <div class="match spaziata" data-match="WC4-A"></div>
-      <div class="match" data-match="WC4-B"></div>
+      <div class="colonna wc-sx">
+        <div class="match" data-match="WC1-A"></div>
+        <div class="match" data-match="WC1-B"></div>
+        <div class="match spaziata" data-match="WC3-A"></div>
+        <div class="match" data-match="WC3-B"></div>
+      </div>
+    </div>
+
+    <div class="blocco-colonna">
+      <h2>Quarti</h2>
+      <div class="colonna">
+        <div class="match" data-match="Q1-A"></div>
+        <div class="match" data-match="Q1-B"></div>
+        <div class="match spaziata" data-match="Q3-A"></div>
+        <div class="match" data-match="Q3-B"></div>
+      </div>
+    </div>
+
+    <div class="blocco-colonna">
+      <h2>Semifinale</h2>
+      <div class="colonna semifinale-sx">
+        <div class="match" data-match="S1-A"></div>
+        <div class="match" data-match="S1-B"></div>
+      </div>
+    </div>
+
+    <div class="blocco-colonna">
+      <h2>Finale</h2>
+      <div class="colonna">
+        <div class="match finale" data-match="F-A"></div>
+        <div class="match finale" data-match="F-B"></div>
+      </div>
+    </div>
+
+    <div class="blocco-colonna">
+      <h2>Semifinale</h2>
+      <div class="colonna semifinale-dx">
+        <div class="match" data-match="S2-A"></div>
+        <div class="match" data-match="S2-B"></div>
+      </div>
+    </div>
+
+    <div class="blocco-colonna">
+      <h2>Quarti</h2>
+      <div class="colonna">
+        <div class="match" data-match="Q2-A"></div>
+        <div class="match" data-match="Q2-B"></div>
+        <div class="match spaziata" data-match="Q4-A"></div>
+        <div class="match" data-match="Q4-B"></div>
+      </div>
+    </div>
+
+    <div class="blocco-colonna">
+      <h2>Wildcard</h2>
+      <div class="colonna wc-dx">
+        <div class="match" data-match="WC2-A"></div>
+        <div class="match" data-match="WC2-B"></div>
+        <div class="match spaziata" data-match="WC4-A"></div>
+        <div class="match" data-match="WC4-B"></div>
+      </div>
     </div>
   </div>
 </body>
 </html>
+
