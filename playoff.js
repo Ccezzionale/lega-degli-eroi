@@ -83,7 +83,7 @@ document.querySelectorAll(".match").forEach(div => {
     }
   }); // 🔚 fine forEach
 
-  // 🏆 Inserimento vincitore sotto la coppa (solo una volta)
+// 🏆 Inserimento vincitore sotto la coppa (solo una volta)
 const finale = window.risultati?.find(r => r.partita === "F");
 if (finale?.vincente) {
   const nomeVincitore = finale.vincente;
@@ -91,17 +91,16 @@ if (finale?.vincente) {
   const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
 
   const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim()}.png`;
-  console.log("🟡 Logo vincitore URL:", logoSrc);
+  console.log("Logo vincitore URL:", logoSrc); // ✅ utile per debug
 
   const htmlVincitore = `
     <div class="vincitore-info">
       <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
       <div class="nome-vincitore">${posizioneText} ${nomeVincitore}</div>
     </div>`;
-
+    
   const container = document.getElementById("vincitore-assoluto");
   if (container) container.innerHTML = htmlVincitore;
-}
 }
 // ✅ Caricamento CSV
 fetch(URL_CLASSIFICA_TOTALE)
