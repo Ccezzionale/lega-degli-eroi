@@ -53,7 +53,7 @@ function aggiornaPlayoff() {
     "F-B": { id: "F", side: "B", from: ["S1", "S2"] },
   };
 
-  document.querySelectorAll(".match").forEach(div => {
+document.querySelectorAll(".match").forEach(div => {
     const id = div.dataset.match;
     const config = mapping[id];
     if (!config) return;
@@ -75,13 +75,25 @@ function aggiornaPlayoff() {
       punteggio = risultato?.[id.endsWith("A") ? "golA" : "golB"] ?? "";
     }
 
-const isVincente = risultato?.vincente === nome;
-div.innerHTML = creaHTMLSquadra(nome, posizione, punteggio, isVincente);
+    const isVincente = risultato?.vincente === nome;
+    div.innerHTML = creaHTMLSquadra(nome, posizione, punteggio, isVincente);
 
-if (isVincente) {
-  div.classList.add("vincente");
-}
-  }); // 👈 questa graffa mancava per chiudere aggiornaPlayoff
+    if (isVincente) {
+      div.classList.add("vincente");
+    }
+  }); // 🔚 fine forEach
+
+  // 🏆 Inserimento vincitore sotto la coppa (solo una volta)
+  const finale = window.risultati?.find(r => r.partita === "F");
+  if (finale?.vincente) {
+    const nomeVincitore = finale.vincente;
+    const posizione = window.squadre?.findIndex(s => s.nome === nomeVincitore);
+    const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
+
+    const htmlVincitore = creaHTMLSquadra(nomeVincitore, posizioneText, "", true);
+    const container = document.getElementById("vincitore-assoluto");
+    if (container) container.innerHTML = htmlVincitore;
+  }
 }
 // ✅ Caricamento CSV
 fetch(URL_CLASSIFICA_TOTALE)
