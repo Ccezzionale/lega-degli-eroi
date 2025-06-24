@@ -68,7 +68,7 @@
       color: #ffffff;
     }
 
-    .match.vincente {
+.match.vincente {
   border: 2px solid gold;
   box-shadow: 0 0 8px gold;
   animation: glow 1.2s ease-in-out infinite alternate;
@@ -81,6 +81,7 @@
   to {
     box-shadow: 0 0 15px gold;
   }
+}
 
 .match img {
   max-width: 30px;
@@ -89,17 +90,20 @@
   vertical-align: middle;
 }
 
-    .squadra.orizzontale {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      justify-content: flex-start;
-    }
+ .squadra.orizzontale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
 
     .squadra.orizzontale img {
-      max-height: 24px;
-      max-width: 24px;
-    }
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+}
 
     .spaziata {
       margin-top: 100px;
