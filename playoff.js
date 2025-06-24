@@ -2,15 +2,20 @@
 const URL_CLASSIFICA_TOTALE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTduESMbJiPuCDLaAFdOHjep9GW-notjraILSyyjo6SA0xKSR0H0fgMLPNNYSwXgnGGJUyv14kjFRqv/pub?gid=691152130&single=true&output=csv";
 
 // ✅ Funzione HTML squadra
-function creaHTMLSquadra(nome, posizione = "", punteggio = "") {
+function creaHTMLSquadra(nome, posizione = "") {
   const nomePulito = nome.replace(/[°]/g, "").trim();
   const usaLogo = !nome.toLowerCase().includes("vincente") && !nome.toLowerCase().includes("classificata");
   const fileLogo = `img/${nomePulito}.png`;
 
-  const logoHTML = usaLogo ? `<img src="${fileLogo}" alt="${nome}" onerror="this.style.display='none'">` : "";
-  const puntiHTML = punteggio !== "" ? `<div class="punteggio">${punteggio}</div>` : "";
+  const logoHTML = usaLogo
+    ? `<img src="${fileLogo}" alt="${nome}" onerror="this.style.display='none'">`
+    : "";
 
-  return `<div class="squadra">${logoHTML}<span>${posizione} ${nome}</span>${puntiHTML}</div>`;
+  return `
+    <div class="squadra orizzontale">
+      ${logoHTML}
+      <span>${posizione} ${nome}</span>
+    </div>`;
 }
 
 // ✅ Aggiorna i match
