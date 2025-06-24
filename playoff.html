@@ -134,12 +134,53 @@ h1 {
   text-shadow: 1px 1px 2px black;
 }
 
-    @media (max-width: 768px) {
-      .match img {
-        max-width: 24px;
-        max-height: 24px;
-      }
-    }
+ @media (max-width: 768px) {
+  body {
+    transform: scale(0.85);
+    transform-origin: top left;
+    min-width: 1200px; /* larghezza minima per evitare tagli */
+    overflow-x: auto;
+  }
+
+  .bracket {
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .blocco-colonna h2 {
+    font-size: 1rem;
+  }
+
+  .match {
+    min-width: 140px;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .squadra.orizzontale img {
+    max-height: 20px;
+    max-width: 20px;
+  }
+
+  .coppa-vittoria img {
+    width: 120px;
+  }
+
+  .logo-vincitore {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nome-vincitore {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+}
 
     .coppa-vittoria {
       display: flex;
