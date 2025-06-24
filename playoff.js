@@ -2,17 +2,18 @@
 const URL_CLASSIFICA_TOTALE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTduESMbJiPuCDLaAFdOHjep9GW-notjraILSyyjo6SA0xKSR0H0fgMLPNNYSwXgnGGJUyv14kjFRqv/pub?gid=691152130&single=true&output=csv";
 
 // ✅ Funzione HTML squadra
-function creaHTMLSquadra(nome, posizione = "") {
+function creaHTMLSquadra(nome, posizione = "", punteggio = "", isVincente = false) {
   const nomePulito = nome.replace(/[°]/g, "").trim();
   const usaLogo = !nome.toLowerCase().includes("vincente") && !nome.toLowerCase().includes("classificata");
   const fileLogo = `img/${nomePulito}.png`;
+  const classe = isVincente ? "vincente" : "perdente";
 
   const logoHTML = usaLogo
     ? `<img src="${fileLogo}" alt="${nome}" onerror="this.style.display='none'">`
     : "";
 
   return `
-    <div class="squadra orizzontale">
+    <div class="squadra orizzontale ${classe}">
       ${logoHTML}
       <span>${posizione} ${nome}</span>
     </div>`;
@@ -74,10 +75,12 @@ function aggiornaPlayoff() {
       punteggio = risultato?.[id.endsWith("A") ? "golA" : "golB"] ?? "";
     }
 
-    div.innerHTML = creaHTMLSquadra(nome, posizione, punteggio);
-    if (risultato?.vincente === nome) {
+const isVincente = risultato?.vincente === nome;
+div.innerHTML = creaHTMLSquadra(nome, posizione, punteggio, isVincente);
+
+if (isVincente) {
   div.classList.add("vincente");
-   }
+}
   }); // 👈 questa graffa mancava per chiudere aggiornaPlayoff
 }
 // ✅ Caricamento CSV
