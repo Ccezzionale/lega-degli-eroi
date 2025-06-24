@@ -44,7 +44,7 @@
     .blocco-colonna h2 {
       margin-top: 0;
       margin-bottom: 10px;
-      color: #ffcc00; /* oro */
+      color: #ffcc00;
       font-size: 1.2rem;
       font-weight: bold;
       text-shadow: 1px 1px 2px black;
@@ -70,20 +70,16 @@
       color: #00f0ff;
     }
 
-.match.vincente {
-  border: 3px solid #ffcc00; /* aumentato da 2px a 3px */
-  box-shadow: 0 0 12px #ffcc00, 0 0 24px #ffcc00; /* glow più potente */
-  animation: glow 1.5s ease-in-out infinite alternate;
-}
+    .match.vincente {
+      border: 3px solid #ffcc00;
+      box-shadow: 0 0 12px #ffcc00, 0 0 24px #ffcc00;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
 
-@keyframes glow {
-  from {
-    box-shadow: 0 0 8px #ffcc00;
-  }
-  to {
-    box-shadow: 0 0 20px #ffcc00;
-  }
-}
+    @keyframes glow {
+      from { box-shadow: 0 0 8px #ffcc00; }
+      to { box-shadow: 0 0 20px #ffcc00; }
+    }
 
     .match img {
       max-width: 30px;
@@ -104,49 +100,18 @@
       max-width: 24px;
     }
 
-.squadra.orizzontale span {
-  color: #00f0ff;
-  font-weight: bold; /* oppure puoi lasciare bold se ti piace */
-}
+    .squadra.orizzontale span {
+      color: #00f0ff;
+      font-weight: bold;
+    }
 
     .squadra.orizzontale.vincente span {
-  font-weight: bold;
-}
+      font-weight: bold;
+    }
 
-.squadra.orizzontale.perdente span {
-  font-weight: normal;
-}
-
-.coppa-vittoria {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.coppa-vittoria img {
-  width: 80px;
-  height: auto;
-}
-
-.vincitore-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.vincitore-info img {
-  width: 40px;
-  height: auto;
-  margin-bottom: 5px;
-}
-
-#nome-vincitore {
-  font-weight: bold;
-  color: #ffcc00;
-  font-size: 1rem;
-}
+    .squadra.orizzontale.perdente span {
+      font-weight: normal;
+    }
 
     .spaziata {
       margin-top: 100px;
@@ -157,11 +122,7 @@
       margin-top: 120px;
     }
 
-    .wc-dx {
-      margin-left: 0px;
-    }
-
-    .wc-sx {
+    .wc-dx, .wc-sx {
       margin-left: 0px;
     }
 
@@ -176,6 +137,38 @@
         max-width: 24px;
         max-height: 24px;
       }
+    }
+
+    .coppa-vittoria {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .coppa-vittoria img {
+      width: 200px;
+      height: auto;
+      filter: drop-shadow(0 0 8px gold);
+    }
+
+    .vincitore-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .vincitore-info img {
+      width: 40px;
+      height: auto;
+      margin-bottom: 5px;
+    }
+
+    #nome-vincitore {
+      font-weight: bold;
+      color: #ffcc00;
+      font-size: 1rem;
     }
   </style>
 </head>
@@ -210,20 +203,20 @@
       </div>
     </div>
 
-    <div class="blocco-colonna">
-  <h2>Finale</h2>
-  <div class="colonna">
-    <div class="match finale" data-match="F-A"></div>
-    <div class="match finale" data-match="F-B"></div>
-  </div>
-
-  <<div class="coppa-vittoria">
-  <img src="img/coppa.png" alt="Coppa del Vincitore">
-  <div class="vincitore-info">
-    <img id="logo-vincitore" src="" alt="Logo Vincitore">
-    <span id="nome-vincitore"></span>
-  </div>
-</div>
+ <div class="blocco-colonna">
+      <h2>Finale</h2>
+      <div class="colonna">
+        <div class="match finale" data-match="F-A"></div>
+        <div class="match finale" data-match="F-B"></div>
+      </div>
+      <div class="coppa-vittoria">
+        <img src="img/coppa.png" alt="Coppa del Vincitore">
+        <div class="vincitore-info">
+          <img id="logo-vincitore" src="" alt="Logo Vincitore">
+          <span id="nome-vincitore"></span>
+        </div>
+      </div>
+    </div>
 
     <div class="blocco-colonna">
       <h2>Semifinale</h2>
