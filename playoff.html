@@ -117,17 +117,16 @@
   font-weight: normal;
 }
 
- .coppa-vittoria {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+.coppa-vittoria {
+  margin-top: 20px;
 }
 
 .coppa-vittoria img {
-  width: 80px;
+  width: 180px;
   height: auto;
   filter: drop-shadow(0 0 8px gold);
 }
+
 
 
     .spaziata {
@@ -193,12 +192,16 @@
     </div>
 
     <div class="blocco-colonna">
-      <h2>Finale</h2>
-      <div class="colonna" style="margin-top: 120px;">
-        <div class="match finale" data-match="F-A"></div>
-        <div class="match finale" data-match="F-B"></div>
-      </div>
-    </div>
+  <h2>Finale</h2>
+  <div class="colonna">
+    <div class="match finale" data-match="F-A"></div>
+    <div class="match finale" data-match="F-B"></div>
+  </div>
+
+  <div class="coppa-vittoria">
+    <img src="img/coppa.png" alt="Coppa del Vincitore">
+  </div>
+</div>
 
     <div class="blocco-colonna">
       <h2>Semifinale</h2>
@@ -226,10 +229,6 @@
         <div class="match spaziata" data-match="WC4-A"></div>
         <div class="match" data-match="WC4-B"></div>
       </div>
-    </div>
-<div class="coppa-vittoria">
-  <img src="img/coppa.png" alt="Coppa del Vincitore">
-</div>
   </div>
 </body>
 </html>
