@@ -14,14 +14,16 @@ body {
   padding: 20px;
   text-align: center;
   overflow-x: auto; /* ✅ Abilita scroll orizzontale */
+  overflow-y: hidden; /* ✅ Evita scroll verticale extra */
+  max-height: 100vh; /* ✅ Limita l'altezza su mobile */
 }
 
 .bracket {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; /* ✅ Non manda le colonne a capo */
+  flex-wrap: nowrap; /* ✅ Nessun ritorno a capo */
   gap: 30px;
-  width: max-content; /* ✅ Obbliga larghezza basata sui contenuti */
+  width: max-content; /* ✅ Mantieni larghezza adattiva */
 }
 
     h1 {
@@ -63,37 +65,6 @@ body {
     
 .wc-sx {
   margin-left: -0px; /* o -60px se vuoi ancora più a sinistra */
-}
-    
-@media (max-width: 768px) {
-  .bracket {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .colonna {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .match {
-    min-width: 120px;
-    font-size: 0.9rem;
-  }
-
-  .spaziata,
-  .semifinale-sx,
-  .semifinale-dx {
-    margin-top: 0;
-  }
-
-  .wc-sx,
-  .wc-dx {
-    margin-left: 0;
-  }
 }
 
    
