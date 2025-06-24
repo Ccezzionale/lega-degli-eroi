@@ -90,7 +90,7 @@ document.querySelectorAll(".match").forEach(div => {
     const posizione = window.squadre?.findIndex(s => s.nome === nomeVincitore);
     const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
 
-    const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim()}.png`;
+    const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim().replace(/ /g, "%20")}.png`;
 const htmlVincitore = `
   <div class="vincitore-info">
     <img src="${logoSrc}" alt="${nomeVincitore}" class="logo-vincitore" onerror="this.style.display='none'">
