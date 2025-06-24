@@ -90,7 +90,7 @@ if (finale?.vincente) {
   const posizione = window.squadre?.findIndex(s => s.nome === nomeVincitore);
   const posizioneText = posizione >= 0 ? `${posizione + 1}°` : "";
 
-  const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim().replaceAll(" ", "%20")}.png`;
+  const logoSrc = `img/${nomeVincitore.replace(/[°]/g, "").trim()}.png`;
   console.log("🟡 Logo vincitore URL:", logoSrc);
 
   const htmlVincitore = `
